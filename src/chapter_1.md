@@ -5,18 +5,52 @@
 # 1. 安装编程环境
 
 - 访问网站: [https://thonny.org/](https://thonny.org/)
+
+  <img src="thonny.jpg">
+
   - 点击 "Windows", 确定运行
-  - 安装程序点击 "Next"(下一步)
-  - 最后安装快完成时，选择"Create Desktop Icon"(创建桌面图标)
+
+- 安装程序
+  - 打开安装程序点击 "Next"(下一步)
+    <img src="install_1.jpg">
+    <img src="install_2.jpg">
+    <img src="install_3.jpg">
+  - 选择"Create desktop icon"(创建桌面图标), 继续"Next"
+    <img src="install_4.jpg">
+
 - 双击桌面新安装的Thonny程序
-  - 安装pygame
-    - TODO
+
+  <img src="icon.jpg">
+
+- 安装pygame
+  - 点击菜单"工具", 选择第一个子菜单"管理器"
+
+    <img src="pkg_1.jpg">
+
+  - 出现包管理器界面
+
+    <img src="pkg_2.jpg">
+
+  - 搜索"pygame"
+
+    <img src="pkg_3.jpg">
+
+  - 从Search results(搜索结果)中点击"pygame"
+
+    <img src="pkg_4.jpg">
+
+  - 安装完成如下,点击"关闭"即可
+
+    <img src="pkg_5.jpg">
 
 # 2. 体验python语言的魔法
 
 - 第一个游戏程序: 碰撞气球
   - 参考[https://www.pygame.org/docs/tut/PygameIntro.html](https://www.pygame.org/docs/tut/PygameIntro.html)
-  - 右键保存，下载气球图标<img src="intro_ball.gif">到桌面
+  - 右键保存，下载气球图标到桌面
+
+    <img src="intro_ball.gif">
+
   - 拷贝气球左边的代码到Thonny文本区，保存文件到桌面，可以取文件名为ball.py
     ```python
     import sys, pygame, time
