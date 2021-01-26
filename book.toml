@@ -4,3 +4,7 @@ language = "en"
 multilingual = false
 src = "src"
 title = "卓远和雅瑜的编程书"
+
+[build]
+build-dir = "docs"
+create-missing = true

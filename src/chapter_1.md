@@ -19,7 +19,7 @@
   - 右键保存，下载气球图标<img src="intro_ball.gif">到桌面
   - 拷贝气球左边的代码到Thonny文本区，保存文件到桌面，可以取文件名为ball.py
     ```python
-    import sys, pygame
+    import sys, pygame, time
     pygame.init()
 
     size = width, height = 320, 240
@@ -44,6 +44,7 @@
         screen.fill(black)
         screen.blit(ball, ballrect)
         pygame.display.flip()
+        time.sleep(0.01)
     ```
   - 点击运行，就可以看到碰撞的气球啦
 - 试试电脑里面自带的游戏
