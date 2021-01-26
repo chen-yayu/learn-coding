@@ -1,0 +1,6 @@
+[book]
+authors = ["Tao Guo"]
+language = "en"
+multilingual = false
+src = "src"
+title = "卓远和雅瑜的编程书"
