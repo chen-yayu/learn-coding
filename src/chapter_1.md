@@ -2,25 +2,29 @@
 
 第一步要先在你们的电脑上安装能够创作游戏和动画的武器-->编程环境, 在上面你们可以编写电脑看得懂的语言，这样就可以指挥电脑干活啦！
 
-# 1. 安装编程环境
+# 1. 安装编程环境IDE
 
 - 访问网站: [https://thonny.org/](https://thonny.org/)
 
   <img src="thonny.jpg">
 
-  - 点击 "Windows", 确定运行
+  - 点击 "Windows", 保存下载软件并运行
+
+---
 
 - 安装程序
-  - 打开安装程序点击 "Next"(下一步)
-    <img src="install_1.jpg">
-    <img src="install_2.jpg">
-    <img src="install_3.jpg">
-  - 选择"Create desktop icon"(创建桌面图标), 继续"Next"
-    <img src="install_4.jpg">
+
+  软件运行后, 依次点击 "Next"(下一步)，注意选择"Create desktop icon"(创建桌面图标)：
+
+    <video width="480" height="320" controls="controls"><source src="./install.mp4" type="video/mp4"></video>
+
+---
 
 - 双击桌面新安装的Thonny程序
 
   <img src="icon.jpg">
+
+---
 
 - 安装pygame
   - 点击菜单"工具", 选择第一个子菜单"管理器"
@@ -31,11 +35,11 @@
 
     <img src="pkg_2.jpg">
 
-  - 搜索"pygame"
+  - 搜索"pygame"，从国内访问可能比较慢，等待"Search results"(搜索结果)出现
 
     <img src="pkg_3.jpg">
 
-  - 从Search results(搜索结果)中点击"pygame"
+  - 从Search results(搜索结果)中点击"pygame"，安装可能需要一段时间完成
 
     <img src="pkg_4.jpg">
 
@@ -45,13 +49,12 @@
 
 # 2. 体验python语言的魔法
 
-- 第一个游戏程序: 碰撞气球
-  - 参考[https://www.pygame.org/docs/tut/PygameIntro.html](https://www.pygame.org/docs/tut/PygameIntro.html)
-  - 右键保存，下载气球图标到桌面
+- 第一个游戏程序: [碰撞气球](https://www.pygame.org/docs/tut/PygameIntro.html)
+  - 右键保存，下载气球图标到桌面，注意保存文件名必须为intro_ball
 
     <img src="intro_ball.gif">
 
-  - 拷贝气球左边的代码到Thonny文本区，保存文件到桌面，可以取文件名为ball.py
+  - 点击下面代码右上角图标进行拷贝，按CTRL+V粘贴到Thonny IDE文本区
     ```python
     import sys, pygame, time
     pygame.init()
@@ -80,19 +83,42 @@
         pygame.display.flip()
         time.sleep(0.01)
     ```
+
+    保存文件到桌面，可以取文件名为ball.py
+
   - 点击运行，就可以看到碰撞的气球啦
+    - 如果没有在上面步骤保存，这里也可以先保存文件名为ball.py到桌面再运行
+    - 对于保存好的文件，下次可以直接双击打开文件运行
+  - 感兴趣的话，可以改动上面的代码，比如speed后面的数字表示两个方向分别的速度，
+    size后面的数字表示窗口的大小，black后面数字表示红黄蓝颜色的成分(255以内)
+
+---
+
 - 试试电脑里面自带的游戏
-  - 访问[pygame](https://www.pygame.org/docs/ref/examples.html)
-  - 试玩外星人游戏
+  - 试玩[外星人游戏](https://www.pygame.org/docs/ref/examples.html)
+  
+    粘贴下面代码到IDE下面的Shell(>>>后面)，按回车就可以了
+
     ```python
     import pygame.examples.aliens
     pygame.examples.aliens.main()
     ```
 
+  - 同样试玩[太空游戏](https://www.pygame.org/docs/ref/examples.html)
+
+    ```python
+    import pygame.examples.stars
+    pygame.examples.stars.main()
+    ```
+
+  - [这里](https://www.pygame.org/docs/ref/examples.html)还有好多其他游戏
+
+---
+
 - 认识Turtle(小乌龟)画图
   - 让电脑来[画画](https://www.geeksforgeeks.org/y-fractal-tree-in-python-using-turtle/) 
-
-    <img src='trees.jpg'>
+  - 在Thonny IDE上新建一个新的文件：选菜单"文件" --> "新建"
+  - 同样点击下面代码右上角图标进行拷贝，按CTRL+V粘贴到Thonny文本区
 
     ```
     from turtle import *
@@ -145,6 +171,16 @@
     y(80, 7) 
     ```
 
+    - 按菜单上的绿色运行图标，就可以出现类似下面的图案啦
+      
+      如果需要保存文件，可以先保存，下次可以直接双击打开保存的文件运行
+
+      同样，你也可以修改上面代码，比如最后一行代码7层变为10层，图画就会有更多细节出现
+
+    <img src='trees.jpg'>
+
+---
+
   - 画圈的小乌龟
     ```python
     import turtle
@@ -175,3 +211,7 @@
     tommy.write("Let's Learn Python!", align="center", font=(None, 16, "bold"))
     tommy.goto(0,-80)
     ```
+
+    <img src='draw.jpg'>
+---
+
