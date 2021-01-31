@@ -20,7 +20,7 @@
 
 ---
 
-- 双击桌面新安装的Thonny程序
+- 双击桌面新安装的Thonny IDE程序
 
   <img src="icon.jpg">
 
@@ -54,7 +54,7 @@
 
     <img src="intro_ball.gif">
 
-  - 点击下面代码右上角图标进行拷贝，按CTRL+V粘贴到Thonny IDE文本区
+  - 点击下面代码右上角图标进行拷贝，到Thonny IDE文本区按CTRL+V粘贴
     ```python
     import sys, pygame, time
     pygame.init()
@@ -87,10 +87,11 @@
     保存文件到桌面，可以取文件名为ball.py
 
   - 点击运行，就可以看到碰撞的气球啦
-    - 如果没有在上面步骤保存，这里也可以先保存文件名为ball.py到桌面再运行
+    - 如果之前没有保存文件，这里也可以保存文件名为ball.py到桌面再运行
     - 对于保存好的文件，下次可以直接双击打开文件运行
-  - 感兴趣的话，可以改动上面的代码，比如speed后面的数字表示两个方向分别的速度，
-    size后面的数字表示窗口的大小，black后面数字表示红黄蓝颜色的成分(255以内)
+  - 感兴趣的话，可以改动上面的代码，比如size后面的数字表示窗口的大小，
+    speed后面的数字表示两个方向分别的速度，
+    black后面数字表示红黄蓝颜色的成分(255以内)
 
 ---
 
@@ -103,6 +104,8 @@
     import pygame.examples.aliens
     pygame.examples.aliens.main()
     ```
+
+    按空格键开火，左右键移动躲避
 
   - 同样试玩[太空游戏](https://www.pygame.org/docs/ref/examples.html)
 
@@ -181,7 +184,7 @@
 
 ---
 
-  - 画圈的小乌龟
+  - 画圈的小乌龟, 参考[https://trinket.io/](https://trinket.io/)
     ```python
     import turtle
 
