@@ -120,7 +120,7 @@
 
 - 认识Turtle(小乌龟)画图
   - 让电脑来[画画](https://www.geeksforgeeks.org/y-fractal-tree-in-python-using-turtle/) 
-  - 在Thonny IDE上新建一个新的文件：选菜单"文件" --> "新建"
+  - 在Thonny IDE上新建一个新的文件：选菜单"File(文件)" --> "New(新文件)"
   - 同样点击下面代码右上角图标进行拷贝，按CTRL+V粘贴到Thonny文本区
 
     ```
