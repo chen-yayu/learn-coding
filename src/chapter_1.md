@@ -27,25 +27,13 @@
 ---
 
 - 安装pygame
-  - 点击菜单"工具", 选择第一个子菜单"管理器"
 
-    <img src="pkg_1.jpg">
+  点击菜单"工具", 选择第一个子菜单"管理器"。出现包管理器界面，搜索"pygame":
 
-  - 出现包管理器界面
+  <video width="480" height="320" controls="controls"><source src="./pkg.mp4" type="video/mp4"></video>
 
-    <img src="pkg_2.jpg">
-
-  - 搜索"pygame"，从国内访问可能比较慢，等待"Search results"(搜索结果)出现
-
-    <img src="pkg_3.jpg">
-
-  - 从Search results(搜索结果)中点击"pygame"，安装可能需要一段时间完成
-
-    <img src="pkg_4.jpg">
-
-  - 安装完成如下,点击"关闭"即可
-
-    <img src="pkg_5.jpg">
+  从国内访问可能比较慢，等待"Search results"(搜索结果)出现后，点击"pygame"，
+  安装可能需要一段时间完成, 最后点击"关闭"即可。
 
 # 2. 体验python语言的魔法
 
