@@ -406,7 +406,7 @@ tommy.goto(0,-80)
 </li>
 </ul>
 <hr />
-<p>这一章我们先试玩一下<a href="https://github.com/fogleman/Minecraft">minecraft克隆版</a>。</p>
+<p>这一章我们先试玩一下<a href="https://github.com/fogleman/Minecraft">minecraft克隆版</a>，后面部分介绍一下几个知名人物。</p>
 <ol>
 <li>安装pyglet软件包</li>
 </ol>
@@ -1363,6 +1363,21 @@ if __name__ == '__main__':
 
         </div>
 
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
         
 
         

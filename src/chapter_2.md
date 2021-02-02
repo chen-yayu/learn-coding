@@ -1,4 +1,5 @@
-这一章我们先试玩一下[minecraft克隆版](https://github.com/fogleman/Minecraft)。
+这一章我们先试玩一下[minecraft克隆版](https://github.com/fogleman/Minecraft)，后面部分介绍一下几个知名人物。
+
 1. 安装pyglet软件包
   - 选择Thonny IDE的菜单"Tools(工具)" --> "Manage Packages(管理软件包)"，在文本框中搜索pyglet
   - 在Search Results(搜索结果)中点击pyglet链接安装，等待安装完成，关闭窗口
