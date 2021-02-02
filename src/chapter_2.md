@@ -917,28 +917,32 @@ if __name__ == '__main__':
 
 ---
 
-Minecraft的创造者Notch
+- Minecraft的创造者Notch
 
-[Minecraft：Mojang的故事](https://www.bilibili.com/video/av603948/)
+  [Minecraft：Mojang的故事](https://www.bilibili.com/video/av603948/)
 
-[Coding with Notch](https://www.youtube.com/watch?v=BES9EKK4Aw4)
-
----
-
-微软公司的创办者比尔盖茨
-
-[计算机如何工作](https://www.youtube.com/playlist?list=PLzdnOPI1iJNcsRwJhvksEo1tJqjIqWbN-)
-
-[minecraft模拟编程](https://code.org/minecraft)
+  [Coding with Notch](https://www.youtube.com/watch?v=BES9EKK4Aw4)
 
 ---
 
-John Carmack
+- 超级马里奥之父宫本茂
 
-[FPS游戏之父-约翰·卡马克](https://www.bilibili.com/video/BV1gs411Q76H)
-
-[Oculus现场编程(racket)](https://www.youtube.com/watch?v=ydyztGZnbNs)
+  [宫本茂谈游戏设计：我从不随波逐流](https://www.bilibili.com/video/av8211313/)
 
 ---
+
+- John Carmack
+
+  [FPS游戏之父-约翰·卡马克](https://www.bilibili.com/video/BV1gs411Q76H)
+
+  [Oculus现场编程(racket)](https://www.youtube.com/watch?v=ydyztGZnbNs)
+
+---
+
+- 微软公司的创办者比尔盖茨
+
+  [计算机如何工作](https://www.youtube.com/playlist?list=PLzdnOPI1iJNcsRwJhvksEo1tJqjIqWbN-)
+
+  [minecraft模拟编程](https://code.org/minecraft)
 
 
