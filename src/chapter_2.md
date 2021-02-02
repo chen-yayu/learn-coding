@@ -3,9 +3,9 @@
 1. 安装pyglet软件包
   - 选择Thonny IDE的菜单"Tools(工具)" --> "Manage Packages(管理软件包)"，在文本框中搜索pyglet
   - 在Search Results(搜索结果)中点击pyglet链接安装，等待安装完成，关闭窗口
-2. 保存下面图片到桌面，文件名为texture
+2. 点击保存下面图片到桌面，文件名为texture
   
-    <img src="texture.png"/>
+    <a href="texture.png" download><img src="texture.png"></a>
 
 3. 拷贝下面代码到Thonny新建文件中，保存文件到桌面。点击运行就可以出现简易版的Minecraft了。游戏指令参见[这里](https://github.com/fogleman/Minecraft#how-to-play)。
 

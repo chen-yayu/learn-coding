@@ -50,9 +50,9 @@
 # 2. 体验python语言的魔法
 
 - 第一个游戏程序: [碰撞气球](https://www.pygame.org/docs/tut/PygameIntro.html)
-  - 右键保存，下载气球图标到桌面，注意保存文件名必须为intro_ball
+  - 点击下载气球图标到桌面，注意保存文件名必须为intro_ball
 
-    <img src="intro_ball.gif">
+    <a href="intro_ball.gif" download><img src="intro_ball.gif"></a>
 
   - 点击下面代码右上角图标进行拷贝，到Thonny IDE文本区按CTRL+V粘贴
     ```python
