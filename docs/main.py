@@ -1,412 +1,3 @@
-<!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
-    <head>
-        <!-- Book generated using mdBook -->
-        <meta charset="UTF-8">
-        <title>卓远和雅瑜的编程书</title>
-        
-        <meta name="robots" content="noindex" />
-        
-        
-
-
-        <!-- Custom HTML head -->
-        
-
-
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
-
-        
-        <link rel="icon" href="favicon.svg">
-        
-        
-        <link rel="shortcut icon" href="favicon.png">
-        
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-        
-        <link rel="stylesheet" href="css/print.css" media="print">
-        
-
-        <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        
-        <link rel="stylesheet" href="fonts/fonts.css">
-        
-
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
-
-        <!-- Custom theme stylesheets -->
-        
-
-        
-    </head>
-    <body>
-        <!-- Provide site root to javascript -->
-        <script type="text/javascript">
-            var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
-        </script>
-
-        <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
-            try {
-                var theme = localStorage.getItem('mdbook-theme');
-                var sidebar = localStorage.getItem('mdbook-sidebar');
-
-                if (theme.startsWith('"') && theme.endsWith('"')) {
-                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
-                }
-
-                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
-                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
-                }
-            } catch (e) { }
-        </script>
-
-        <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
-            var theme;
-            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
-            if (theme === null || theme === undefined) { theme = default_theme; }
-            var html = document.querySelector('html');
-            html.classList.remove('no-js')
-            html.classList.remove('light')
-            html.classList.add(theme);
-            html.classList.add('js');
-        </script>
-
-        <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
-            var html = document.querySelector('html');
-            var sidebar = 'hidden';
-            if (document.body.clientWidth >= 1080) {
-                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
-                sidebar = sidebar || 'visible';
-            }
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
-        </script>
-
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> 第一章 体验python编程的乐趣</a></li><li class="chapter-item expanded "><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> 第二章 认识编程大师</a></li><li class="chapter-item expanded "><a href="chapter_3.html"><strong aria-hidden="true">3.</strong> 第三章 python一小时编程基础</a></li></ol>
-            </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
-        </nav>
-
-        <div id="page-wrapper" class="page-wrapper">
-
-            <div class="page">
-                
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
-                    <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
-                        </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
-                        </ul>
-                        
-                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
-                            <i class="fa fa-search"></i>
-                        </button>
-                        
-                    </div>
-
-                    <h1 class="menu-title">卓远和雅瑜的编程书</h1>
-
-                    <div class="right-buttons">
-                        
-                        <a href="print.html" title="Print this book" aria-label="Print this book">
-                            <i id="print-button" class="fa fa-print"></i>
-                        </a>
-                        
-                        
-                    </div>
-                </div>
-
-                
-                <div id="search-wrapper" class="hidden">
-                    <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
-                    </form>
-                    <div id="searchresults-outer" class="searchresults-outer hidden">
-                        <div id="searchresults-header" class="searchresults-header"></div>
-                        <ul id="searchresults">
-                        </ul>
-                    </div>
-                </div>
-                
-
-                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
-                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
-                    });
-                </script>
-
-                <div id="content" class="content">
-                    <main>
-                        <p>卓远和雅瑜小朋友，你们的寒假编程兴趣班开课啦！这本书是专门为你们编写的，希望你们能够学得开心!</p>
-<p>第一步要先在你们的电脑上安装能够创作游戏和动画的武器--&gt;编程环境, 在上面你们可以编写电脑看得懂的语言，这样就可以指挥电脑干活啦！</p>
-<h1><a class="header" href="#1-安装编程环境ide" id="1-安装编程环境ide">1. 安装编程环境IDE</a></h1>
-<ul>
-<li>
-<p>访问网站: <a href="https://thonny.org/">https://thonny.org/</a></p>
-<img src="thonny.jpg">
-<ul>
-<li>点击 &quot;Windows&quot;, 保存下载软件并运行</li>
-</ul>
-</li>
-</ul>
-<hr />
-<ul>
-<li>
-<p>安装程序</p>
-<p>软件运行后, 依次点击 &quot;Next&quot;(下一步)，注意选择&quot;Create desktop icon&quot;(创建桌面图标)：</p>
-<p><video width="480" height="320" controls="controls"><source src="./install.mp4" type="video/mp4"></video></p>
-</li>
-</ul>
-<hr />
-<ul>
-<li>
-<p>双击桌面新安装的Thonny IDE程序</p>
-<img src="icon.jpg">
-</li>
-</ul>
-<hr />
-<ul>
-<li>
-<p>安装pygame</p>
-<p>点击菜单&quot;工具&quot;, 选择第一个子菜单&quot;管理器&quot;。出现包管理器界面，搜索&quot;pygame&quot;:</p>
-<p><video width="480" height="320" controls="controls"><source src="./pkg.mp4" type="video/mp4"></video></p>
-<p>从国内访问可能比较慢，等待&quot;Search results&quot;(搜索结果)出现后，点击&quot;pygame&quot;，
-安装可能需要一段时间完成, 最后点击&quot;关闭&quot;即可。</p>
-</li>
-</ul>
-<h1><a class="header" href="#2-体验python语言的魔法" id="2-体验python语言的魔法">2. 体验python语言的魔法</a></h1>
-<ul>
-<li>第一个游戏程序: <a href="https://www.pygame.org/docs/tut/PygameIntro.html">碰撞气球</a>
-<ul>
-<li>
-<p>点击下载气球图标到桌面，注意保存文件名必须为intro_ball</p>
-<p><a href="intro_ball.gif" download><img src="intro_ball.gif"></a></p>
-</li>
-<li>
-<p>点击下面代码右上角图标进行拷贝，到Thonny IDE文本区按CTRL+V粘贴</p>
-<pre><code class="language-python">import sys, pygame, time
-pygame.init()
-
-size = width, height = 320, 240
-speed = [2, 2]
-black = 0, 0, 0
-
-screen = pygame.display.set_mode(size)
-
-ball = pygame.image.load(&quot;intro_ball.gif&quot;)
-ballrect = ball.get_rect()
-
-while 1:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT: sys.exit()
-
-    ballrect = ballrect.move(speed)
-    if ballrect.left &lt; 0 or ballrect.right &gt; width:
-        speed[0] = -speed[0]
-    if ballrect.top &lt; 0 or ballrect.bottom &gt; height:
-        speed[1] = -speed[1]
-
-    screen.fill(black)
-    screen.blit(ball, ballrect)
-    pygame.display.flip()
-    time.sleep(0.01)
-</code></pre>
-<p>保存文件到桌面，可以取文件名为ball.py</p>
-</li>
-<li>
-<p>点击运行，就可以看到碰撞的气球啦</p>
-<ul>
-<li>如果之前没有保存文件，这里也可以保存文件名为ball.py到桌面再运行</li>
-<li>对于保存好的文件，下次可以直接双击打开文件运行</li>
-</ul>
-</li>
-<li>
-<p>感兴趣的话，可以改动上面的代码，比如size后面的数字表示窗口的大小，
-speed后面的数字表示两个方向分别的速度，
-black后面数字表示红黄蓝颜色的成分(255以内)</p>
-</li>
-</ul>
-</li>
-</ul>
-<hr />
-<ul>
-<li>试试电脑里面自带的游戏
-<ul>
-<li>
-<p>试玩<a href="https://www.pygame.org/docs/ref/examples.html">外星人游戏</a></p>
-<p>粘贴下面代码到IDE下面的Shell(&gt;&gt;&gt;后面)，按回车就可以了</p>
-<pre><code class="language-python">import pygame.examples.aliens
-pygame.examples.aliens.main()
-</code></pre>
-<p>按空格键开火，左右键移动躲避</p>
-</li>
-<li>
-<p>同样试玩<a href="https://www.pygame.org/docs/ref/examples.html">太空游戏</a></p>
-<pre><code class="language-python">import pygame.examples.stars
-pygame.examples.stars.main()
-</code></pre>
-</li>
-<li>
-<p><a href="https://www.pygame.org/docs/ref/examples.html">这里</a>还有好多其他游戏</p>
-</li>
-</ul>
-</li>
-</ul>
-<hr />
-<ul>
-<li>认识Turtle(小乌龟)画图
-<ul>
-<li>
-<p>让电脑来<a href="https://www.geeksforgeeks.org/y-fractal-tree-in-python-using-turtle/">画画</a> </p>
-</li>
-<li>
-<p>在Thonny IDE上新建一个新的文件：选菜单&quot;File(文件)&quot; --&gt; &quot;New(新文件)&quot;</p>
-</li>
-<li>
-<p>同样点击下面代码右上角图标进行拷贝，按CTRL+V粘贴到Thonny文本区</p>
-<pre><code>from turtle import *
-
-speed('fastest') 
-
-# turning the turtle to face upwards 
-rt(-90) 
-
-# the acute angle between 
-# the base and branch of the Y 
-angle = 30
-
-# function to plot a Y 
-def y(sz, level): 
-
-  if level &gt; 0: 
-    colormode(255) 
-    
-    # splitting the rgb range for green 
-    # into equal intervals for each level 
-    # setting the colour according 
-    # to the current level 
-    pencolor(0, 255//level, 0) 
-    
-    # drawing the base 
-    fd(sz) 
-
-    rt(angle) 
-
-    # recursive call for 
-    # the right subtree 
-    y(0.8 * sz, level-1) 
-    
-    pencolor(0, 255//level, 0) 
-    
-    lt( 2 * angle ) 
-
-    # recursive call for 
-    # the left subtree 
-    y(0.8 * sz, level-1) 
-    
-    pencolor(0, 255//level, 0) 
-    
-    rt(angle) 
-    fd(-sz) 
-    
-    
-# tree of size 80 and level 7 
-y(80, 7) 
-</code></pre>
-<ul>
-<li>
-<p>按菜单上的绿色运行图标，就可以出现类似下面的图案啦</p>
-<p>如果需要保存文件，可以先保存，下次可以直接双击打开保存的文件运行</p>
-<p>同样，你也可以修改上面代码，比如最后一行代码7层变为10层，图画就会有更多细节出现</p>
-</li>
-</ul>
-<img src='trees.jpg'>
-</li>
-</ul>
-</li>
-</ul>
-<hr />
-<ul>
-<li>
-<p>画圈的小乌龟, 参考<a href="https://trinket.io/">https://trinket.io/</a></p>
-<pre><code class="language-python">import turtle
-
-def draw_circle(turtle, color, size, x, y):
-    turtle.penup()
-    turtle.color(color)
-    turtle.fillcolor(color)
-    turtle.goto(x,y)
-    turtle.begin_fill()
-    turtle.pendown()
-    turtle.circle(size)
-    turtle.penup()
-    turtle.end_fill()
-    turtle.pendown()
-
-tommy = turtle.Turtle()
-tommy.shape(&quot;turtle&quot;)
-tommy.speed(500)
-
-draw_circle(tommy, &quot;green&quot;, 50, 25, 0)
-draw_circle(tommy, &quot;blue&quot;, 50, 0, 0)
-draw_circle(tommy, &quot;yellow&quot;, 50, -25, 0)
-
-tommy.penup()
-tommy.goto(0,-50)
-tommy.color('black')
-tommy.write(&quot;Let's Learn Python!&quot;, align=&quot;center&quot;, font=(None, 16, &quot;bold&quot;))
-tommy.goto(0,-80)
-</code></pre>
-<img src='draw.jpg'>
-</li>
-</ul>
-<hr />
-<p>这一章我们先试玩一下<a href="https://github.com/fogleman/Minecraft">minecraft克隆版</a>，后面部分介绍一下几个知名人物。</p>
-<ol>
-<li>安装pyglet软件包</li>
-</ol>
-<ul>
-<li>选择Thonny IDE的菜单&quot;Tools(工具)&quot; --&gt; &quot;Manage Packages(管理软件包)&quot;，在文本框中搜索pyglet</li>
-<li>在Search Results(搜索结果)中点击pyglet链接安装，等待安装完成，关闭窗口</li>
-</ul>
-<ol start="2">
-<li>
-<p>点击保存下面图片到桌面，文件名为texture</p>
-<p><a href="texture.png" download><img src="texture.png"></a></p>
-</li>
-<li>
-<p>拷贝下面代码到Thonny新建文件中，保存文件到桌面。点击运行就可以出现简易版的Minecraft了。游戏指令参见<a href="https://github.com/fogleman/Minecraft#how-to-play">这里</a>。</p>
-<details>
- <summary>点击展开源代码</summary>
-<pre><code class="language-python">
 from __future__ import division
 
 import sys
@@ -442,13 +33,13 @@ TERMINAL_VELOCITY = 50
 
 PLAYER_HEIGHT = 2
 
-if sys.version_info[0] &gt;= 3:
+if sys.version_info[0] >= 3:
     xrange = range
 
 def cube_vertices(x, y, z, n):
-    &quot;&quot;&quot; Return the vertices of the cube at position x, y, z with size 2*n.
+    """ Return the vertices of the cube at position x, y, z with size 2*n.
 
-    &quot;&quot;&quot;
+    """
     return [
         x-n,y+n,z-n, x-n,y+n,z+n, x+n,y+n,z+n, x+n,y+n,z-n,  # top
         x-n,y-n,z-n, x+n,y-n,z-n, x+n,y-n,z+n, x-n,y-n,z+n,  # bottom
@@ -460,9 +51,9 @@ def cube_vertices(x, y, z, n):
 
 
 def tex_coord(x, y, n=4):
-    &quot;&quot;&quot; Return the bounding vertices of the texture square.
+    """ Return the bounding vertices of the texture square.
 
-    &quot;&quot;&quot;
+    """
     m = 1.0 / n
     dx = x * m
     dy = y * m
@@ -470,9 +61,9 @@ def tex_coord(x, y, n=4):
 
 
 def tex_coords(top, bottom, side):
-    &quot;&quot;&quot; Return a list of the texture squares for the top, bottom and side.
+    """ Return a list of the texture squares for the top, bottom and side.
 
-    &quot;&quot;&quot;
+    """
     top = tex_coord(*top)
     bottom = tex_coord(*bottom)
     side = tex_coord(*side)
@@ -501,7 +92,7 @@ FACES = [
 
 
 def normalize(position):
-    &quot;&quot;&quot; Accepts `position` of arbitrary precision and returns the block
+    """ Accepts `position` of arbitrary precision and returns the block
     containing that position.
 
     Parameters
@@ -512,14 +103,14 @@ def normalize(position):
     -------
     block_position : tuple of ints of len 3
 
-    &quot;&quot;&quot;
+    """
     x, y, z = position
     x, y, z = (int(round(x)), int(round(y)), int(round(z)))
     return (x, y, z)
 
 
 def sectorize(position):
-    &quot;&quot;&quot; Returns a tuple representing the sector for the given `position`.
+    """ Returns a tuple representing the sector for the given `position`.
 
     Parameters
     ----------
@@ -529,7 +120,7 @@ def sectorize(position):
     -------
     sector : tuple of len 3
 
-    &quot;&quot;&quot;
+    """
     x, y, z = normalize(position)
     x, y, z = x // SECTOR_SIZE, y // SECTOR_SIZE, z // SECTOR_SIZE
     return (x, 0, z)
@@ -565,9 +156,9 @@ class Model(object):
         self._initialize()
 
     def _initialize(self):
-        &quot;&quot;&quot; Initialize the world by placing all the blocks.
+        """ Initialize the world by placing all the blocks.
 
-        &quot;&quot;&quot;
+        """
         n = 80  # 1/2 width and height of world
         s = 1  # step size
         y = 0  # initial y height
@@ -594,15 +185,15 @@ class Model(object):
             for y in xrange(c, c + h):
                 for x in xrange(a - s, a + s + 1):
                     for z in xrange(b - s, b + s + 1):
-                        if (x - a) ** 2 + (z - b) ** 2 &gt; (s + 1) ** 2:
+                        if (x - a) ** 2 + (z - b) ** 2 > (s + 1) ** 2:
                             continue
-                        if (x - 0) ** 2 + (z - 0) ** 2 &lt; 5 ** 2:
+                        if (x - 0) ** 2 + (z - 0) ** 2 < 5 ** 2:
                             continue
                         self.add_block((x, y, z), t, immediate=False)
                 s -= d  # decrement side length so hills taper off
 
     def hit_test(self, position, vector, max_distance=8):
-        &quot;&quot;&quot; Line of sight search from current position. If a block is
+        """ Line of sight search from current position. If a block is
         intersected it is returned, along with the block previously in the line
         of sight. If no block is found, return None, None.
 
@@ -615,7 +206,7 @@ class Model(object):
         max_distance : int
             How many blocks away to search for a hit.
 
-        &quot;&quot;&quot;
+        """
         m = 8
         x, y, z = position
         dx, dy, dz = vector
@@ -629,10 +220,10 @@ class Model(object):
         return None, None
 
     def exposed(self, position):
-        &quot;&quot;&quot; Returns False is given `position` is surrounded on all 6 sides by
+        """ Returns False is given `position` is surrounded on all 6 sides by
         blocks, True otherwise.
 
-        &quot;&quot;&quot;
+        """
         x, y, z = position
         for dx, dy, dz in FACES:
             if (x + dx, y + dy, z + dz) not in self.world:
@@ -640,7 +231,7 @@ class Model(object):
         return False
 
     def add_block(self, position, texture, immediate=True):
-        &quot;&quot;&quot; Add a block with the given `texture` and `position` to the world.
+        """ Add a block with the given `texture` and `position` to the world.
 
         Parameters
         ----------
@@ -652,7 +243,7 @@ class Model(object):
         immediate : bool
             Whether or not to draw the block immediately.
 
-        &quot;&quot;&quot;
+        """
         if position in self.world:
             self.remove_block(position, immediate)
         self.world[position] = texture
@@ -663,7 +254,7 @@ class Model(object):
             self.check_neighbors(position)
 
     def remove_block(self, position, immediate=True):
-        &quot;&quot;&quot; Remove the block at the given `position`.
+        """ Remove the block at the given `position`.
 
         Parameters
         ----------
@@ -672,7 +263,7 @@ class Model(object):
         immediate : bool
             Whether or not to immediately remove block from canvas.
 
-        &quot;&quot;&quot;
+        """
         del self.world[position]
         self.sectors[sectorize(position)].remove(position)
         if immediate:
@@ -681,12 +272,12 @@ class Model(object):
             self.check_neighbors(position)
 
     def check_neighbors(self, position):
-        &quot;&quot;&quot; Check all blocks surrounding `position` and ensure their visual
+        """ Check all blocks surrounding `position` and ensure their visual
         state is current. This means hiding blocks that are not exposed and
         ensuring that all exposed blocks are shown. Usually used after a block
         is added or removed.
 
-        &quot;&quot;&quot;
+        """
         x, y, z = position
         for dx, dy, dz in FACES:
             key = (x + dx, y + dy, z + dz)
@@ -700,7 +291,7 @@ class Model(object):
                     self.hide_block(key)
 
     def show_block(self, position, immediate=True):
-        &quot;&quot;&quot; Show the block at the given `position`. This method assumes the
+        """ Show the block at the given `position`. This method assumes the
         block has already been added with add_block()
 
         Parameters
@@ -710,7 +301,7 @@ class Model(object):
         immediate : bool
             Whether or not to show the block immediately.
 
-        &quot;&quot;&quot;
+        """
         texture = self.world[position]
         self.shown[position] = texture
         if immediate:
@@ -719,7 +310,7 @@ class Model(object):
             self._enqueue(self._show_block, position, texture)
 
     def _show_block(self, position, texture):
-        &quot;&quot;&quot; Private implementation of the `show_block()` method.
+        """ Private implementation of the `show_block()` method.
 
         Parameters
         ----------
@@ -729,7 +320,7 @@ class Model(object):
             The coordinates of the texture squares. Use `tex_coords()` to
             generate.
 
-        &quot;&quot;&quot;
+        """
         x, y, z = position
         vertex_data = cube_vertices(x, y, z, 0.5)
         texture_data = list(texture)
@@ -740,7 +331,7 @@ class Model(object):
             ('t2f/static', texture_data))
 
     def hide_block(self, position, immediate=True):
-        &quot;&quot;&quot; Hide the block at the given `position`. Hiding does not remove the
+        """ Hide the block at the given `position`. Hiding does not remove the
         block from the world.
 
         Parameters
@@ -750,7 +341,7 @@ class Model(object):
         immediate : bool
             Whether or not to immediately remove the block from the canvas.
 
-        &quot;&quot;&quot;
+        """
         self.shown.pop(position)
         if immediate:
             self._hide_block(position)
@@ -758,42 +349,42 @@ class Model(object):
             self._enqueue(self._hide_block, position)
 
     def _hide_block(self, position):
-        &quot;&quot;&quot; Private implementation of the 'hide_block()` method.
+        """ Private implementation of the 'hide_block()` method.
 
-        &quot;&quot;&quot;
+        """
         self._shown.pop(position).delete()
 
     def show_sector(self, sector):
-        &quot;&quot;&quot; Ensure all blocks in the given sector that should be shown are
+        """ Ensure all blocks in the given sector that should be shown are
         drawn to the canvas.
 
-        &quot;&quot;&quot;
+        """
         for position in self.sectors.get(sector, []):
             if position not in self.shown and self.exposed(position):
                 self.show_block(position, False)
 
     def hide_sector(self, sector):
-        &quot;&quot;&quot; Ensure all blocks in the given sector that should be hidden are
+        """ Ensure all blocks in the given sector that should be hidden are
         removed from the canvas.
 
-        &quot;&quot;&quot;
+        """
         for position in self.sectors.get(sector, []):
             if position in self.shown:
                 self.hide_block(position, False)
 
     def change_sectors(self, before, after):
-        &quot;&quot;&quot; Move from sector `before` to sector `after`. A sector is a
+        """ Move from sector `before` to sector `after`. A sector is a
         contiguous x, y sub-region of world. Sectors are used to speed up
         world rendering.
 
-        &quot;&quot;&quot;
+        """
         before_set = set()
         after_set = set()
         pad = 4
         for dx in xrange(-pad, pad + 1):
             for dy in [0]:  # xrange(-pad, pad + 1):
                 for dz in xrange(-pad, pad + 1):
-                    if dx ** 2 + dy ** 2 + dz ** 2 &gt; (pad + 1) ** 2:
+                    if dx ** 2 + dy ** 2 + dz ** 2 > (pad + 1) ** 2:
                         continue
                     if before:
                         x, y, z = before
@@ -809,33 +400,33 @@ class Model(object):
             self.hide_sector(sector)
 
     def _enqueue(self, func, *args):
-        &quot;&quot;&quot; Add `func` to the internal queue.
+        """ Add `func` to the internal queue.
 
-        &quot;&quot;&quot;
+        """
         self.queue.append((func, args))
 
     def _dequeue(self):
-        &quot;&quot;&quot; Pop the top function from the internal queue and call it.
+        """ Pop the top function from the internal queue and call it.
 
-        &quot;&quot;&quot;
+        """
         func, args = self.queue.popleft()
         func(*args)
 
     def process_queue(self):
-        &quot;&quot;&quot; Process the entire queue while taking periodic breaks. This allows
+        """ Process the entire queue while taking periodic breaks. This allows
         the game loop to run smoothly. The queue contains calls to
         _show_block() and _hide_block() so this method should be called if
         add_block() or remove_block() was called with immediate=False
 
-        &quot;&quot;&quot;
+        """
         start = time.perf_counter()
-        while self.queue and time.perf_counter() - start &lt; 1.0 / TICKS_PER_SEC:
+        while self.queue and time.perf_counter() - start < 1.0 / TICKS_PER_SEC:
             self._dequeue()
 
     def process_entire_queue(self):
-        &quot;&quot;&quot; Process the entire queue with no breaks.
+        """ Process the entire queue with no breaks.
 
-        &quot;&quot;&quot;
+        """
         while self.queue:
             self._dequeue()
 
@@ -904,18 +495,18 @@ class Window(pyglet.window.Window):
         pyglet.clock.schedule_interval(self.update, 1.0 / TICKS_PER_SEC)
 
     def set_exclusive_mouse(self, exclusive):
-        &quot;&quot;&quot; If `exclusive` is True, the game will capture the mouse, if False
+        """ If `exclusive` is True, the game will capture the mouse, if False
         the game will ignore the mouse.
 
-        &quot;&quot;&quot;
+        """
         super(Window, self).set_exclusive_mouse(exclusive)
         self.exclusive = exclusive
 
     def get_sight_vector(self):
-        &quot;&quot;&quot; Returns the current line of sight vector indicating the direction
+        """ Returns the current line of sight vector indicating the direction
         the player is looking.
 
-        &quot;&quot;&quot;
+        """
         x, y = self.rotation
         # y ranges from -90 to 90, or -pi/2 to pi/2, so m ranges from 0 to 1 and
         # is 1 when looking ahead parallel to the ground and 0 when looking
@@ -929,7 +520,7 @@ class Window(pyglet.window.Window):
         return (dx, dy, dz)
 
     def get_motion_vector(self):
-        &quot;&quot;&quot; Returns the current motion vector indicating the velocity of the
+        """ Returns the current motion vector indicating the velocity of the
         player.
 
         Returns
@@ -937,7 +528,7 @@ class Window(pyglet.window.Window):
         vector : tuple of len 3
             Tuple containing the velocity in x, y, and z respectively.
 
-        &quot;&quot;&quot;
+        """
         if any(self.strafe):
             x, y = self.rotation
             strafe = math.degrees(math.atan2(*self.strafe))
@@ -950,7 +541,7 @@ class Window(pyglet.window.Window):
                     # Moving left or right.
                     dy = 0.0
                     m = 1
-                if self.strafe[0] &gt; 0:
+                if self.strafe[0] > 0:
                     # Moving backwards.
                     dy *= -1
                 # When you are flying up or down, you have less left and right
@@ -968,7 +559,7 @@ class Window(pyglet.window.Window):
         return (dx, dy, dz)
 
     def update(self, dt):
-        &quot;&quot;&quot; This method is scheduled to be called repeatedly by the pyglet
+        """ This method is scheduled to be called repeatedly by the pyglet
         clock.
 
         Parameters
@@ -976,7 +567,7 @@ class Window(pyglet.window.Window):
         dt : float
             The change in time since the last call.
 
-        &quot;&quot;&quot;
+        """
         self.model.process_queue()
         sector = sectorize(self.position)
         if sector != self.sector:
@@ -990,7 +581,7 @@ class Window(pyglet.window.Window):
             self._update(dt / m)
 
     def _update(self, dt):
-        &quot;&quot;&quot; Private implementation of the `update()` method. This is where most
+        """ Private implementation of the `update()` method. This is where most
         of the motion logic lives, along with gravity and collision detection.
 
         Parameters
@@ -998,7 +589,7 @@ class Window(pyglet.window.Window):
         dt : float
             The change in time since the last call.
 
-        &quot;&quot;&quot;
+        """
         # walking
         speed = FLYING_SPEED if self.flying else WALKING_SPEED
         d = dt * speed # distance covered this tick.
@@ -1019,7 +610,7 @@ class Window(pyglet.window.Window):
         self.position = (x, y, z)
 
     def collide(self, position, height):
-        &quot;&quot;&quot; Checks to see if the player at the given `position` and `height`
+        """ Checks to see if the player at the given `position` and `height`
         is colliding with any blocks in the world.
 
         Parameters
@@ -1034,11 +625,11 @@ class Window(pyglet.window.Window):
         position : tuple of len 3
             The new position of the player taking into account collisions.
 
-        &quot;&quot;&quot;
+        """
         # How much overlap with a dimension of a surrounding block you need to
         # have to count as a collision. If 0, touching terrain at all counts as
         # a collision. If .49, you sink into the ground, as if walking through
-        # tall grass. If &gt;= .5, you'll fall through the ground.
+        # tall grass. If >= .5, you'll fall through the ground.
         pad = 0.25
         p = list(position)
         np = normalize(position)
@@ -1048,7 +639,7 @@ class Window(pyglet.window.Window):
                     continue
                 # How much overlap you have with this dimension.
                 d = (p[i] - np[i]) * face[i]
-                if d &lt; pad:
+                if d < pad:
                     continue
                 for dy in xrange(height):  # check each height
                     op = list(np)
@@ -1065,7 +656,7 @@ class Window(pyglet.window.Window):
         return tuple(p)
 
     def on_mouse_press(self, x, y, button, modifiers):
-        &quot;&quot;&quot; Called when a mouse button is pressed. See pyglet docs for button
+        """ Called when a mouse button is pressed. See pyglet docs for button
         amd modifier mappings.
 
         Parameters
@@ -1080,12 +671,12 @@ class Window(pyglet.window.Window):
             Number representing any modifying keys that were pressed when the
             mouse button was clicked.
 
-        &quot;&quot;&quot;
+        """
         if self.exclusive:
             vector = self.get_sight_vector()
             block, previous = self.model.hit_test(self.position, vector)
             if (button == mouse.RIGHT) or \
-                    ((button == mouse.LEFT) and (modifiers &amp; key.MOD_CTRL)):
+                    ((button == mouse.LEFT) and (modifiers & key.MOD_CTRL)):
                 # ON OSX, control + left click = right click.
                 if previous:
                     self.model.add_block(previous, self.block)
@@ -1097,7 +688,7 @@ class Window(pyglet.window.Window):
             self.set_exclusive_mouse(True)
 
     def on_mouse_motion(self, x, y, dx, dy):
-        &quot;&quot;&quot; Called when the player moves the mouse.
+        """ Called when the player moves the mouse.
 
         Parameters
         ----------
@@ -1107,7 +698,7 @@ class Window(pyglet.window.Window):
         dx, dy : float
             The movement of the mouse.
 
-        &quot;&quot;&quot;
+        """
         if self.exclusive:
             m = 0.15
             x, y = self.rotation
@@ -1116,7 +707,7 @@ class Window(pyglet.window.Window):
             self.rotation = (x, y)
 
     def on_key_press(self, symbol, modifiers):
-        &quot;&quot;&quot; Called when the player presses a key. See pyglet docs for key
+        """ Called when the player presses a key. See pyglet docs for key
         mappings.
 
         Parameters
@@ -1126,7 +717,7 @@ class Window(pyglet.window.Window):
         modifiers : int
             Number representing any modifying keys that were pressed.
 
-        &quot;&quot;&quot;
+        """
         if symbol == key.W:
             self.strafe[0] -= 1
         elif symbol == key.S:
@@ -1147,7 +738,7 @@ class Window(pyglet.window.Window):
             self.block = self.inventory[index]
 
     def on_key_release(self, symbol, modifiers):
-        &quot;&quot;&quot; Called when the player releases a key. See pyglet docs for key
+        """ Called when the player releases a key. See pyglet docs for key
         mappings.
 
         Parameters
@@ -1157,7 +748,7 @@ class Window(pyglet.window.Window):
         modifiers : int
             Number representing any modifying keys that were pressed.
 
-        &quot;&quot;&quot;
+        """
         if symbol == key.W:
             self.strafe[0] += 1
         elif symbol == key.S:
@@ -1168,9 +759,9 @@ class Window(pyglet.window.Window):
             self.strafe[1] -= 1
 
     def on_resize(self, width, height):
-        &quot;&quot;&quot; Called when the window is resized to a new `width` and `height`.
+        """ Called when the window is resized to a new `width` and `height`.
 
-        &quot;&quot;&quot;
+        """
         # label
         self.label.y = height - 10
         # reticle
@@ -1183,9 +774,9 @@ class Window(pyglet.window.Window):
         )
 
     def set_2d(self):
-        &quot;&quot;&quot; Configure OpenGL to draw in 2d.
+        """ Configure OpenGL to draw in 2d.
 
-        &quot;&quot;&quot;
+        """
         width, height = self.get_size()
         glDisable(GL_DEPTH_TEST)
         viewport = self.get_viewport_size()
@@ -1197,9 +788,9 @@ class Window(pyglet.window.Window):
         glLoadIdentity()
 
     def set_3d(self):
-        &quot;&quot;&quot; Configure OpenGL to draw in 3d.
+        """ Configure OpenGL to draw in 3d.
 
-        &quot;&quot;&quot;
+        """
         width, height = self.get_size()
         glEnable(GL_DEPTH_TEST)
         viewport = self.get_viewport_size()
@@ -1216,9 +807,9 @@ class Window(pyglet.window.Window):
         glTranslatef(-x, -y, -z)
 
     def on_draw(self):
-        &quot;&quot;&quot; Called by pyglet to draw the canvas.
+        """ Called by pyglet to draw the canvas.
 
-        &quot;&quot;&quot;
+        """
         self.clear()
         self.set_3d()
         glColor3d(1, 1, 1)
@@ -1229,10 +820,10 @@ class Window(pyglet.window.Window):
         self.draw_reticle()
 
     def draw_focused_block(self):
-        &quot;&quot;&quot; Draw black edges around the block that is currently under the
+        """ Draw black edges around the block that is currently under the
         crosshairs.
 
-        &quot;&quot;&quot;
+        """
         vector = self.get_sight_vector()
         block = self.model.hit_test(self.position, vector)[0]
         if block:
@@ -1244,9 +835,9 @@ class Window(pyglet.window.Window):
             glPolygonMode(GL_FRONT_AND_BACK, GL_FILL)
 
     def draw_label(self):
-        &quot;&quot;&quot; Draw the label in the top left of the screen.
+        """ Draw the label in the top left of the screen.
 
-        &quot;&quot;&quot;
+        """
         x, y, z = self.position
         self.label.text = '%02d (%.2f, %.2f, %.2f) %d / %d' % (
             pyglet.clock.get_fps(), x, y, z,
@@ -1254,19 +845,19 @@ class Window(pyglet.window.Window):
         self.label.draw()
 
     def draw_reticle(self):
-        &quot;&quot;&quot; Draw the crosshairs in the center of the screen.
+        """ Draw the crosshairs in the center of the screen.
 
-        &quot;&quot;&quot;
+        """
         glColor3d(0, 0, 0)
         self.reticle.draw(GL_LINES)
 
 
 def setup_fog():
-    &quot;&quot;&quot; Configure the OpenGL fog properties.
+    """ Configure the OpenGL fog properties.
 
-    &quot;&quot;&quot;
-    # Enable fog. Fog &quot;blends a fog color with each rasterized pixel fragment's
-    # post-texturing color.&quot;
+    """
+    # Enable fog. Fog "blends a fog color with each rasterized pixel fragment's
+    # post-texturing color."
     glEnable(GL_FOG)
     # Set the fog color.
     glFogfv(GL_FOG_COLOR, (GLfloat * 4)(0.5, 0.69, 1.0, 1))
@@ -1281,19 +872,19 @@ def setup_fog():
 
 
 def setup():
-    &quot;&quot;&quot; Basic OpenGL configuration.
+    """ Basic OpenGL configuration.
 
-    &quot;&quot;&quot;
-    # Set the color of &quot;clear&quot;, i.e. the sky, in rgba.
+    """
+    # Set the color of "clear", i.e. the sky, in rgba.
     glClearColor(0.5, 0.69, 1.0, 1)
     # Enable culling (not rendering) of back-facing facets -- facets that aren't
     # visible to you.
     glEnable(GL_CULL_FACE)
     # Set the texture minification/magnification function to GL_NEAREST (nearest
     # in Manhattan distance) to the specified texture coordinates. GL_NEAREST
-    # &quot;is generally faster than GL_LINEAR, but it can produce textured images
+    # "is generally faster than GL_LINEAR, but it can produce textured images
     # with sharper edges because the transition between texture elements is not
-    # as smooth.&quot;
+    # as smooth."
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST)
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST)
     setup_fog()
@@ -1309,101 +900,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-</code></pre>
-</details>
-</li>
-</ol>
-<hr />
-<ul>
-<li>
-<p>Minecraft的创造者Notch</p>
-<p><a href="https://www.bilibili.com/video/av603948/">Minecraft：Mojang的故事</a></p>
-<p><a href="https://www.youtube.com/watch?v=BES9EKK4Aw4">Coding with Notch</a></p>
-</li>
-</ul>
-<hr />
-<ul>
-<li>
-<p>超级马里奥之父宫本茂</p>
-<p><a href="https://www.bilibili.com/video/av8211313/">宫本茂谈游戏设计：我从不随波逐流</a></p>
-</li>
-</ul>
-<hr />
-<ul>
-<li>
-<p>John Carmack</p>
-<p><a href="https://www.bilibili.com/video/BV1gs411Q76H">FPS游戏之父-约翰·卡马克</a></p>
-<p><a href="https://www.youtube.com/watch?v=ydyztGZnbNs">Oculus现场编程(racket)</a></p>
-</li>
-</ul>
-<hr />
-<ul>
-<li>
-<p>微软公司的创办者比尔盖茨</p>
-<p><a href="https://www.youtube.com/playlist?list=PLzdnOPI1iJNcsRwJhvksEo1tJqjIqWbN-">计算机如何工作</a></p>
-<p><a href="https://code.org/minecraft">minecraft模拟编程</a></p>
-</li>
-</ul>
-<p><a href="https://hourofpython.trinket.io/ke3-shi4-hua4-python-jian3-jie4#/wu1-gui1/ren4-shi2-tina">python编程一小时</a></p>
-
-                    </main>
-
-                    <nav class="nav-wrapper" aria-label="Page navigation">
-                        <!-- Mobile navigation buttons -->
-                        
-
-                        
-
-                        <div style="clear: both"></div>
-                    </nav>
-                </div>
-            </div>
-
-            <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                
-
-                
-            </nav>
-
-        </div>
-
-        
-
-        
-
-        
-
-        
-        <script type="text/javascript">
-            window.playground_copyable = true;
-        </script>
-        
-
-        
-
-        
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
-        
-
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
-
-        <!-- Custom JS scripts -->
-        
-
-        
-        
-        <script type="text/javascript">
-        window.addEventListener('load', function() {
-            window.setTimeout(window.print, 100);
-        });
-        </script>
-        
-        
-
-    </body>
-</html>
