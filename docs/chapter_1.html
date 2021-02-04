@@ -95,7 +95,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html" class="active"><strong aria-hidden="true">1.</strong> 第一章 体验python编程的乐趣</a></li><li class="chapter-item expanded "><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> 第二章 认识编程大师</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html" class="active"><strong aria-hidden="true">1.</strong> 第一章 体验python编程的乐趣</a></li><li class="chapter-item expanded "><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> 第二章 认识编程大师</a></li><li class="chapter-item expanded "><a href="chapter_3.html"><strong aria-hidden="true">3.</strong> 第三章 python一小时编程基础</a></li><li class="chapter-item expanded "><a href="chapter_4.html"><strong aria-hidden="true">4.</strong> 第三章 自主学习之路</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -192,29 +192,12 @@
 </ul>
 <hr />
 <ul>
-<li>安装pygame
-<ul>
 <li>
-<p>点击菜单&quot;工具&quot;, 选择第一个子菜单&quot;管理器&quot;</p>
-<img src="pkg_1.jpg">
-</li>
-<li>
-<p>出现包管理器界面</p>
-<img src="pkg_2.jpg">
-</li>
-<li>
-<p>搜索&quot;pygame&quot;，从国内访问可能比较慢，等待&quot;Search results&quot;(搜索结果)出现</p>
-<img src="pkg_3.jpg">
-</li>
-<li>
-<p>从Search results(搜索结果)中点击&quot;pygame&quot;，安装可能需要一段时间完成</p>
-<img src="pkg_4.jpg">
-</li>
-<li>
-<p>安装完成如下,点击&quot;关闭&quot;即可</p>
-<img src="pkg_5.jpg">
-</li>
-</ul>
+<p>安装pygame</p>
+<p>点击菜单&quot;工具&quot;, 选择第一个子菜单&quot;管理器&quot;。出现包管理器界面，搜索&quot;pygame&quot;:</p>
+<p><video width="480" height="320" controls="controls"><source src="./pkg.mp4" type="video/mp4"></video></p>
+<p>从国内访问可能比较慢，等待&quot;Search results&quot;(搜索结果)出现后，点击&quot;pygame&quot;，
+安装可能需要一段时间完成, 最后点击&quot;关闭&quot;即可。</p>
 </li>
 </ul>
 <h1><a class="header" href="#2-体验python语言的魔法" id="2-体验python语言的魔法">2. 体验python语言的魔法</a></h1>
@@ -222,8 +205,8 @@
 <li>第一个游戏程序: <a href="https://www.pygame.org/docs/tut/PygameIntro.html">碰撞气球</a>
 <ul>
 <li>
-<p>右键保存，下载气球图标到桌面，注意保存文件名必须为intro_ball</p>
-<img src="intro_ball.gif">
+<p>点击下载气球图标到桌面，注意保存文件名必须为intro_ball</p>
+<p><a href="intro_ball.gif" download><img src="intro_ball.gif"></a></p>
 </li>
 <li>
 <p>点击下面代码右上角图标进行拷贝，到Thonny IDE文本区按CTRL+V粘贴</p>
@@ -303,7 +286,7 @@ pygame.examples.stars.main()
 <p>让电脑来<a href="https://www.geeksforgeeks.org/y-fractal-tree-in-python-using-turtle/">画画</a> </p>
 </li>
 <li>
-<p>在Thonny IDE上新建一个新的文件：选菜单&quot;文件&quot; --&gt; &quot;新建&quot;</p>
+<p>在Thonny IDE上新建一个新的文件：选菜单&quot;File(文件)&quot; --&gt; &quot;New(新文件)&quot;</p>
 </li>
 <li>
 <p>同样点击下面代码右上角图标进行拷贝，按CTRL+V粘贴到Thonny文本区</p>
@@ -434,6 +417,21 @@ tommy.goto(0,-80)
 
         </div>
 
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
         
 
         

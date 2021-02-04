@@ -97,7 +97,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> 第一章 体验python编程的乐趣</a></li><li class="chapter-item expanded "><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> 第二章 认识编程大师</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> 第一章 体验python编程的乐趣</a></li><li class="chapter-item expanded "><a href="chapter_2.html"><strong aria-hidden="true">2.</strong> 第二章 认识编程大师</a></li><li class="chapter-item expanded "><a href="chapter_3.html"><strong aria-hidden="true">3.</strong> 第三章 python一小时编程基础</a></li><li class="chapter-item expanded "><a href="chapter_4.html"><strong aria-hidden="true">4.</strong> 第三章 自主学习之路</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -194,29 +194,12 @@
 </ul>
 <hr />
 <ul>
-<li>安装pygame
-<ul>
 <li>
-<p>点击菜单&quot;工具&quot;, 选择第一个子菜单&quot;管理器&quot;</p>
-<img src="pkg_1.jpg">
-</li>
-<li>
-<p>出现包管理器界面</p>
-<img src="pkg_2.jpg">
-</li>
-<li>
-<p>搜索&quot;pygame&quot;，从国内访问可能比较慢，等待&quot;Search results&quot;(搜索结果)出现</p>
-<img src="pkg_3.jpg">
-</li>
-<li>
-<p>从Search results(搜索结果)中点击&quot;pygame&quot;，安装可能需要一段时间完成</p>
-<img src="pkg_4.jpg">
-</li>
-<li>
-<p>安装完成如下,点击&quot;关闭&quot;即可</p>
-<img src="pkg_5.jpg">
-</li>
-</ul>
+<p>安装pygame</p>
+<p>点击菜单&quot;工具&quot;, 选择第一个子菜单&quot;管理器&quot;。出现包管理器界面，搜索&quot;pygame&quot;:</p>
+<p><video width="480" height="320" controls="controls"><source src="./pkg.mp4" type="video/mp4"></video></p>
+<p>从国内访问可能比较慢，等待&quot;Search results&quot;(搜索结果)出现后，点击&quot;pygame&quot;，
+安装可能需要一段时间完成, 最后点击&quot;关闭&quot;即可。</p>
 </li>
 </ul>
 <h1><a class="header" href="#2-体验python语言的魔法" id="2-体验python语言的魔法">2. 体验python语言的魔法</a></h1>
@@ -224,8 +207,8 @@
 <li>第一个游戏程序: <a href="https://www.pygame.org/docs/tut/PygameIntro.html">碰撞气球</a>
 <ul>
 <li>
-<p>右键保存，下载气球图标到桌面，注意保存文件名必须为intro_ball</p>
-<img src="intro_ball.gif">
+<p>点击下载气球图标到桌面，注意保存文件名必须为intro_ball</p>
+<p><a href="intro_ball.gif" download><img src="intro_ball.gif"></a></p>
 </li>
 <li>
 <p>点击下面代码右上角图标进行拷贝，到Thonny IDE文本区按CTRL+V粘贴</p>
@@ -305,7 +288,7 @@ pygame.examples.stars.main()
 <p>让电脑来<a href="https://www.geeksforgeeks.org/y-fractal-tree-in-python-using-turtle/">画画</a> </p>
 </li>
 <li>
-<p>在Thonny IDE上新建一个新的文件：选菜单&quot;文件&quot; --&gt; &quot;新建&quot;</p>
+<p>在Thonny IDE上新建一个新的文件：选菜单&quot;File(文件)&quot; --&gt; &quot;New(新文件)&quot;</p>
 </li>
 <li>
 <p>同样点击下面代码右上角图标进行拷贝，按CTRL+V粘贴到Thonny文本区</p>
@@ -406,19 +389,1716 @@ tommy.goto(0,-80)
 </li>
 </ul>
 <hr />
+<p>这一章我们先试玩一下<a href="https://github.com/fogleman/Minecraft">minecraft克隆版</a>，后面部分介绍一下几个知名人物。</p>
+<ol>
+<li>安装pyglet软件包</li>
+</ol>
+<ul>
+<li>选择Thonny IDE的菜单&quot;Tools(工具)&quot; --&gt; &quot;Manage Packages(管理软件包)&quot;，在文本框中搜索pyglet</li>
+<li>在Search Results(搜索结果)中点击pyglet链接安装，等待安装完成，关闭窗口</li>
+</ul>
+<ol start="2">
+<li>
+<p>点击保存下面图片到桌面，文件名为texture</p>
+<p><a href="texture.png" download><img src="texture.png"></a></p>
+</li>
+<li>
+<p>拷贝下面代码到Thonny新建文件中，保存文件到桌面。点击运行就可以出现简易版的Minecraft了。游戏指令参见<a href="https://github.com/fogleman/Minecraft#how-to-play">这里</a>。</p>
+<details>
+ <summary>点击展开源代码</summary>
+<pre><code class="language-python">
+from __future__ import division
+
+import sys
+import math
+import random
+import time
+
+from collections import deque
+from pyglet import image
+from pyglet.gl import *
+from pyglet.graphics import TextureGroup
+from pyglet.window import key, mouse
+
+TICKS_PER_SEC = 60
+
+# Size of sectors used to ease block loading.
+SECTOR_SIZE = 16
+
+WALKING_SPEED = 5
+FLYING_SPEED = 15
+
+GRAVITY = 20.0
+MAX_JUMP_HEIGHT = 1.0 # About the height of a block.
+# To derive the formula for calculating jump speed, first solve
+#    v_t = v_0 + a * t
+# for the time at which you achieve maximum height, where a is the acceleration
+# due to gravity and v_t = 0. This gives:
+#    t = - v_0 / a
+# Use t and the desired MAX_JUMP_HEIGHT to solve for v_0 (jump speed) in
+#    s = s_0 + v_0 * t + (a * t^2) / 2
+JUMP_SPEED = math.sqrt(2 * GRAVITY * MAX_JUMP_HEIGHT)
+TERMINAL_VELOCITY = 50
+
+PLAYER_HEIGHT = 2
+
+if sys.version_info[0] &gt;= 3:
+    xrange = range
+
+def cube_vertices(x, y, z, n):
+    &quot;&quot;&quot; Return the vertices of the cube at position x, y, z with size 2*n.
+
+    &quot;&quot;&quot;
+    return [
+        x-n,y+n,z-n, x-n,y+n,z+n, x+n,y+n,z+n, x+n,y+n,z-n,  # top
+        x-n,y-n,z-n, x+n,y-n,z-n, x+n,y-n,z+n, x-n,y-n,z+n,  # bottom
+        x-n,y-n,z-n, x-n,y-n,z+n, x-n,y+n,z+n, x-n,y+n,z-n,  # left
+        x+n,y-n,z+n, x+n,y-n,z-n, x+n,y+n,z-n, x+n,y+n,z+n,  # right
+        x-n,y-n,z+n, x+n,y-n,z+n, x+n,y+n,z+n, x-n,y+n,z+n,  # front
+        x+n,y-n,z-n, x-n,y-n,z-n, x-n,y+n,z-n, x+n,y+n,z-n,  # back
+    ]
+
+
+def tex_coord(x, y, n=4):
+    &quot;&quot;&quot; Return the bounding vertices of the texture square.
+
+    &quot;&quot;&quot;
+    m = 1.0 / n
+    dx = x * m
+    dy = y * m
+    return dx, dy, dx + m, dy, dx + m, dy + m, dx, dy + m
+
+
+def tex_coords(top, bottom, side):
+    &quot;&quot;&quot; Return a list of the texture squares for the top, bottom and side.
+
+    &quot;&quot;&quot;
+    top = tex_coord(*top)
+    bottom = tex_coord(*bottom)
+    side = tex_coord(*side)
+    result = []
+    result.extend(top)
+    result.extend(bottom)
+    result.extend(side * 4)
+    return result
+
+
+TEXTURE_PATH = 'texture.png'
+
+GRASS = tex_coords((1, 0), (0, 1), (0, 0))
+SAND = tex_coords((1, 1), (1, 1), (1, 1))
+BRICK = tex_coords((2, 0), (2, 0), (2, 0))
+STONE = tex_coords((2, 1), (2, 1), (2, 1))
+
+FACES = [
+    ( 0, 1, 0),
+    ( 0,-1, 0),
+    (-1, 0, 0),
+    ( 1, 0, 0),
+    ( 0, 0, 1),
+    ( 0, 0,-1),
+]
+
+
+def normalize(position):
+    &quot;&quot;&quot; Accepts `position` of arbitrary precision and returns the block
+    containing that position.
+
+    Parameters
+    ----------
+    position : tuple of len 3
+
+    Returns
+    -------
+    block_position : tuple of ints of len 3
+
+    &quot;&quot;&quot;
+    x, y, z = position
+    x, y, z = (int(round(x)), int(round(y)), int(round(z)))
+    return (x, y, z)
+
+
+def sectorize(position):
+    &quot;&quot;&quot; Returns a tuple representing the sector for the given `position`.
+
+    Parameters
+    ----------
+    position : tuple of len 3
+
+    Returns
+    -------
+    sector : tuple of len 3
+
+    &quot;&quot;&quot;
+    x, y, z = normalize(position)
+    x, y, z = x // SECTOR_SIZE, y // SECTOR_SIZE, z // SECTOR_SIZE
+    return (x, 0, z)
+
+
+class Model(object):
+
+    def __init__(self):
+
+        # A Batch is a collection of vertex lists for batched rendering.
+        self.batch = pyglet.graphics.Batch()
+
+        # A TextureGroup manages an OpenGL texture.
+        self.group = TextureGroup(image.load(TEXTURE_PATH).get_texture())
+
+        # A mapping from position to the texture of the block at that position.
+        # This defines all the blocks that are currently in the world.
+        self.world = {}
+
+        # Same mapping as `world` but only contains blocks that are shown.
+        self.shown = {}
+
+        # Mapping from position to a pyglet `VertextList` for all shown blocks.
+        self._shown = {}
+
+        # Mapping from sector to a list of positions inside that sector.
+        self.sectors = {}
+
+        # Simple function queue implementation. The queue is populated with
+        # _show_block() and _hide_block() calls
+        self.queue = deque()
+
+        self._initialize()
+
+    def _initialize(self):
+        &quot;&quot;&quot; Initialize the world by placing all the blocks.
+
+        &quot;&quot;&quot;
+        n = 80  # 1/2 width and height of world
+        s = 1  # step size
+        y = 0  # initial y height
+        for x in xrange(-n, n + 1, s):
+            for z in xrange(-n, n + 1, s):
+                # create a layer stone an grass everywhere.
+                self.add_block((x, y - 2, z), GRASS, immediate=False)
+                self.add_block((x, y - 3, z), STONE, immediate=False)
+                if x in (-n, n) or z in (-n, n):
+                    # create outer walls.
+                    for dy in xrange(-2, 3):
+                        self.add_block((x, y + dy, z), STONE, immediate=False)
+
+        # generate the hills randomly
+        o = n - 10
+        for _ in xrange(120):
+            a = random.randint(-o, o)  # x position of the hill
+            b = random.randint(-o, o)  # z position of the hill
+            c = -1  # base of the hill
+            h = random.randint(1, 6)  # height of the hill
+            s = random.randint(4, 8)  # 2 * s is the side length of the hill
+            d = 1  # how quickly to taper off the hills
+            t = random.choice([GRASS, SAND, BRICK])
+            for y in xrange(c, c + h):
+                for x in xrange(a - s, a + s + 1):
+                    for z in xrange(b - s, b + s + 1):
+                        if (x - a) ** 2 + (z - b) ** 2 &gt; (s + 1) ** 2:
+                            continue
+                        if (x - 0) ** 2 + (z - 0) ** 2 &lt; 5 ** 2:
+                            continue
+                        self.add_block((x, y, z), t, immediate=False)
+                s -= d  # decrement side length so hills taper off
+
+    def hit_test(self, position, vector, max_distance=8):
+        &quot;&quot;&quot; Line of sight search from current position. If a block is
+        intersected it is returned, along with the block previously in the line
+        of sight. If no block is found, return None, None.
+
+        Parameters
+        ----------
+        position : tuple of len 3
+            The (x, y, z) position to check visibility from.
+        vector : tuple of len 3
+            The line of sight vector.
+        max_distance : int
+            How many blocks away to search for a hit.
+
+        &quot;&quot;&quot;
+        m = 8
+        x, y, z = position
+        dx, dy, dz = vector
+        previous = None
+        for _ in xrange(max_distance * m):
+            key = normalize((x, y, z))
+            if key != previous and key in self.world:
+                return key, previous
+            previous = key
+            x, y, z = x + dx / m, y + dy / m, z + dz / m
+        return None, None
+
+    def exposed(self, position):
+        &quot;&quot;&quot; Returns False is given `position` is surrounded on all 6 sides by
+        blocks, True otherwise.
+
+        &quot;&quot;&quot;
+        x, y, z = position
+        for dx, dy, dz in FACES:
+            if (x + dx, y + dy, z + dz) not in self.world:
+                return True
+        return False
+
+    def add_block(self, position, texture, immediate=True):
+        &quot;&quot;&quot; Add a block with the given `texture` and `position` to the world.
+
+        Parameters
+        ----------
+        position : tuple of len 3
+            The (x, y, z) position of the block to add.
+        texture : list of len 3
+            The coordinates of the texture squares. Use `tex_coords()` to
+            generate.
+        immediate : bool
+            Whether or not to draw the block immediately.
+
+        &quot;&quot;&quot;
+        if position in self.world:
+            self.remove_block(position, immediate)
+        self.world[position] = texture
+        self.sectors.setdefault(sectorize(position), []).append(position)
+        if immediate:
+            if self.exposed(position):
+                self.show_block(position)
+            self.check_neighbors(position)
+
+    def remove_block(self, position, immediate=True):
+        &quot;&quot;&quot; Remove the block at the given `position`.
+
+        Parameters
+        ----------
+        position : tuple of len 3
+            The (x, y, z) position of the block to remove.
+        immediate : bool
+            Whether or not to immediately remove block from canvas.
+
+        &quot;&quot;&quot;
+        del self.world[position]
+        self.sectors[sectorize(position)].remove(position)
+        if immediate:
+            if position in self.shown:
+                self.hide_block(position)
+            self.check_neighbors(position)
+
+    def check_neighbors(self, position):
+        &quot;&quot;&quot; Check all blocks surrounding `position` and ensure their visual
+        state is current. This means hiding blocks that are not exposed and
+        ensuring that all exposed blocks are shown. Usually used after a block
+        is added or removed.
+
+        &quot;&quot;&quot;
+        x, y, z = position
+        for dx, dy, dz in FACES:
+            key = (x + dx, y + dy, z + dz)
+            if key not in self.world:
+                continue
+            if self.exposed(key):
+                if key not in self.shown:
+                    self.show_block(key)
+            else:
+                if key in self.shown:
+                    self.hide_block(key)
+
+    def show_block(self, position, immediate=True):
+        &quot;&quot;&quot; Show the block at the given `position`. This method assumes the
+        block has already been added with add_block()
+
+        Parameters
+        ----------
+        position : tuple of len 3
+            The (x, y, z) position of the block to show.
+        immediate : bool
+            Whether or not to show the block immediately.
+
+        &quot;&quot;&quot;
+        texture = self.world[position]
+        self.shown[position] = texture
+        if immediate:
+            self._show_block(position, texture)
+        else:
+            self._enqueue(self._show_block, position, texture)
+
+    def _show_block(self, position, texture):
+        &quot;&quot;&quot; Private implementation of the `show_block()` method.
+
+        Parameters
+        ----------
+        position : tuple of len 3
+            The (x, y, z) position of the block to show.
+        texture : list of len 3
+            The coordinates of the texture squares. Use `tex_coords()` to
+            generate.
+
+        &quot;&quot;&quot;
+        x, y, z = position
+        vertex_data = cube_vertices(x, y, z, 0.5)
+        texture_data = list(texture)
+        # create vertex list
+        # FIXME Maybe `add_indexed()` should be used instead
+        self._shown[position] = self.batch.add(24, GL_QUADS, self.group,
+            ('v3f/static', vertex_data),
+            ('t2f/static', texture_data))
+
+    def hide_block(self, position, immediate=True):
+        &quot;&quot;&quot; Hide the block at the given `position`. Hiding does not remove the
+        block from the world.
+
+        Parameters
+        ----------
+        position : tuple of len 3
+            The (x, y, z) position of the block to hide.
+        immediate : bool
+            Whether or not to immediately remove the block from the canvas.
+
+        &quot;&quot;&quot;
+        self.shown.pop(position)
+        if immediate:
+            self._hide_block(position)
+        else:
+            self._enqueue(self._hide_block, position)
+
+    def _hide_block(self, position):
+        &quot;&quot;&quot; Private implementation of the 'hide_block()` method.
+
+        &quot;&quot;&quot;
+        self._shown.pop(position).delete()
+
+    def show_sector(self, sector):
+        &quot;&quot;&quot; Ensure all blocks in the given sector that should be shown are
+        drawn to the canvas.
+
+        &quot;&quot;&quot;
+        for position in self.sectors.get(sector, []):
+            if position not in self.shown and self.exposed(position):
+                self.show_block(position, False)
+
+    def hide_sector(self, sector):
+        &quot;&quot;&quot; Ensure all blocks in the given sector that should be hidden are
+        removed from the canvas.
+
+        &quot;&quot;&quot;
+        for position in self.sectors.get(sector, []):
+            if position in self.shown:
+                self.hide_block(position, False)
+
+    def change_sectors(self, before, after):
+        &quot;&quot;&quot; Move from sector `before` to sector `after`. A sector is a
+        contiguous x, y sub-region of world. Sectors are used to speed up
+        world rendering.
+
+        &quot;&quot;&quot;
+        before_set = set()
+        after_set = set()
+        pad = 4
+        for dx in xrange(-pad, pad + 1):
+            for dy in [0]:  # xrange(-pad, pad + 1):
+                for dz in xrange(-pad, pad + 1):
+                    if dx ** 2 + dy ** 2 + dz ** 2 &gt; (pad + 1) ** 2:
+                        continue
+                    if before:
+                        x, y, z = before
+                        before_set.add((x + dx, y + dy, z + dz))
+                    if after:
+                        x, y, z = after
+                        after_set.add((x + dx, y + dy, z + dz))
+        show = after_set - before_set
+        hide = before_set - after_set
+        for sector in show:
+            self.show_sector(sector)
+        for sector in hide:
+            self.hide_sector(sector)
+
+    def _enqueue(self, func, *args):
+        &quot;&quot;&quot; Add `func` to the internal queue.
+
+        &quot;&quot;&quot;
+        self.queue.append((func, args))
+
+    def _dequeue(self):
+        &quot;&quot;&quot; Pop the top function from the internal queue and call it.
+
+        &quot;&quot;&quot;
+        func, args = self.queue.popleft()
+        func(*args)
+
+    def process_queue(self):
+        &quot;&quot;&quot; Process the entire queue while taking periodic breaks. This allows
+        the game loop to run smoothly. The queue contains calls to
+        _show_block() and _hide_block() so this method should be called if
+        add_block() or remove_block() was called with immediate=False
+
+        &quot;&quot;&quot;
+        start = time.perf_counter()
+        while self.queue and time.perf_counter() - start &lt; 1.0 / TICKS_PER_SEC:
+            self._dequeue()
+
+    def process_entire_queue(self):
+        &quot;&quot;&quot; Process the entire queue with no breaks.
+
+        &quot;&quot;&quot;
+        while self.queue:
+            self._dequeue()
+
+
+class Window(pyglet.window.Window):
+
+    def __init__(self, *args, **kwargs):
+        super(Window, self).__init__(*args, **kwargs)
+
+        # Whether or not the window exclusively captures the mouse.
+        self.exclusive = False
+
+        # When flying gravity has no effect and speed is increased.
+        self.flying = False
+
+        # Strafing is moving lateral to the direction you are facing,
+        # e.g. moving to the left or right while continuing to face forward.
+        #
+        # First element is -1 when moving forward, 1 when moving back, and 0
+        # otherwise. The second element is -1 when moving left, 1 when moving
+        # right, and 0 otherwise.
+        self.strafe = [0, 0]
+
+        # Current (x, y, z) position in the world, specified with floats. Note
+        # that, perhaps unlike in math class, the y-axis is the vertical axis.
+        self.position = (0, 0, 0)
+
+        # First element is rotation of the player in the x-z plane (ground
+        # plane) measured from the z-axis down. The second is the rotation
+        # angle from the ground plane up. Rotation is in degrees.
+        #
+        # The vertical plane rotation ranges from -90 (looking straight down) to
+        # 90 (looking straight up). The horizontal rotation range is unbounded.
+        self.rotation = (0, 0)
+
+        # Which sector the player is currently in.
+        self.sector = None
+
+        # The crosshairs at the center of the screen.
+        self.reticle = None
+
+        # Velocity in the y (upward) direction.
+        self.dy = 0
+
+        # A list of blocks the player can place. Hit num keys to cycle.
+        self.inventory = [BRICK, GRASS, SAND]
+
+        # The current block the user can place. Hit num keys to cycle.
+        self.block = self.inventory[0]
+
+        # Convenience list of num keys.
+        self.num_keys = [
+            key._1, key._2, key._3, key._4, key._5,
+            key._6, key._7, key._8, key._9, key._0]
+
+        # Instance of the model that handles the world.
+        self.model = Model()
+
+        # The label that is displayed in the top left of the canvas.
+        self.label = pyglet.text.Label('', font_name='Arial', font_size=18,
+            x=10, y=self.height - 10, anchor_x='left', anchor_y='top',
+            color=(0, 0, 0, 255))
+
+        # This call schedules the `update()` method to be called
+        # TICKS_PER_SEC. This is the main game event loop.
+        pyglet.clock.schedule_interval(self.update, 1.0 / TICKS_PER_SEC)
+
+    def set_exclusive_mouse(self, exclusive):
+        &quot;&quot;&quot; If `exclusive` is True, the game will capture the mouse, if False
+        the game will ignore the mouse.
+
+        &quot;&quot;&quot;
+        super(Window, self).set_exclusive_mouse(exclusive)
+        self.exclusive = exclusive
+
+    def get_sight_vector(self):
+        &quot;&quot;&quot; Returns the current line of sight vector indicating the direction
+        the player is looking.
+
+        &quot;&quot;&quot;
+        x, y = self.rotation
+        # y ranges from -90 to 90, or -pi/2 to pi/2, so m ranges from 0 to 1 and
+        # is 1 when looking ahead parallel to the ground and 0 when looking
+        # straight up or down.
+        m = math.cos(math.radians(y))
+        # dy ranges from -1 to 1 and is -1 when looking straight down and 1 when
+        # looking straight up.
+        dy = math.sin(math.radians(y))
+        dx = math.cos(math.radians(x - 90)) * m
+        dz = math.sin(math.radians(x - 90)) * m
+        return (dx, dy, dz)
+
+    def get_motion_vector(self):
+        &quot;&quot;&quot; Returns the current motion vector indicating the velocity of the
+        player.
+
+        Returns
+        -------
+        vector : tuple of len 3
+            Tuple containing the velocity in x, y, and z respectively.
+
+        &quot;&quot;&quot;
+        if any(self.strafe):
+            x, y = self.rotation
+            strafe = math.degrees(math.atan2(*self.strafe))
+            y_angle = math.radians(y)
+            x_angle = math.radians(x + strafe)
+            if self.flying:
+                m = math.cos(y_angle)
+                dy = math.sin(y_angle)
+                if self.strafe[1]:
+                    # Moving left or right.
+                    dy = 0.0
+                    m = 1
+                if self.strafe[0] &gt; 0:
+                    # Moving backwards.
+                    dy *= -1
+                # When you are flying up or down, you have less left and right
+                # motion.
+                dx = math.cos(x_angle) * m
+                dz = math.sin(x_angle) * m
+            else:
+                dy = 0.0
+                dx = math.cos(x_angle)
+                dz = math.sin(x_angle)
+        else:
+            dy = 0.0
+            dx = 0.0
+            dz = 0.0
+        return (dx, dy, dz)
+
+    def update(self, dt):
+        &quot;&quot;&quot; This method is scheduled to be called repeatedly by the pyglet
+        clock.
+
+        Parameters
+        ----------
+        dt : float
+            The change in time since the last call.
+
+        &quot;&quot;&quot;
+        self.model.process_queue()
+        sector = sectorize(self.position)
+        if sector != self.sector:
+            self.model.change_sectors(self.sector, sector)
+            if self.sector is None:
+                self.model.process_entire_queue()
+            self.sector = sector
+        m = 8
+        dt = min(dt, 0.2)
+        for _ in xrange(m):
+            self._update(dt / m)
+
+    def _update(self, dt):
+        &quot;&quot;&quot; Private implementation of the `update()` method. This is where most
+        of the motion logic lives, along with gravity and collision detection.
+
+        Parameters
+        ----------
+        dt : float
+            The change in time since the last call.
+
+        &quot;&quot;&quot;
+        # walking
+        speed = FLYING_SPEED if self.flying else WALKING_SPEED
+        d = dt * speed # distance covered this tick.
+        dx, dy, dz = self.get_motion_vector()
+        # New position in space, before accounting for gravity.
+        dx, dy, dz = dx * d, dy * d, dz * d
+        # gravity
+        if not self.flying:
+            # Update your vertical speed: if you are falling, speed up until you
+            # hit terminal velocity; if you are jumping, slow down until you
+            # start falling.
+            self.dy -= dt * GRAVITY
+            self.dy = max(self.dy, -TERMINAL_VELOCITY)
+            dy += self.dy * dt
+        # collisions
+        x, y, z = self.position
+        x, y, z = self.collide((x + dx, y + dy, z + dz), PLAYER_HEIGHT)
+        self.position = (x, y, z)
+
+    def collide(self, position, height):
+        &quot;&quot;&quot; Checks to see if the player at the given `position` and `height`
+        is colliding with any blocks in the world.
+
+        Parameters
+        ----------
+        position : tuple of len 3
+            The (x, y, z) position to check for collisions at.
+        height : int or float
+            The height of the player.
+
+        Returns
+        -------
+        position : tuple of len 3
+            The new position of the player taking into account collisions.
+
+        &quot;&quot;&quot;
+        # How much overlap with a dimension of a surrounding block you need to
+        # have to count as a collision. If 0, touching terrain at all counts as
+        # a collision. If .49, you sink into the ground, as if walking through
+        # tall grass. If &gt;= .5, you'll fall through the ground.
+        pad = 0.25
+        p = list(position)
+        np = normalize(position)
+        for face in FACES:  # check all surrounding blocks
+            for i in xrange(3):  # check each dimension independently
+                if not face[i]:
+                    continue
+                # How much overlap you have with this dimension.
+                d = (p[i] - np[i]) * face[i]
+                if d &lt; pad:
+                    continue
+                for dy in xrange(height):  # check each height
+                    op = list(np)
+                    op[1] -= dy
+                    op[i] += face[i]
+                    if tuple(op) not in self.model.world:
+                        continue
+                    p[i] -= (d - pad) * face[i]
+                    if face == (0, -1, 0) or face == (0, 1, 0):
+                        # You are colliding with the ground or ceiling, so stop
+                        # falling / rising.
+                        self.dy = 0
+                    break
+        return tuple(p)
+
+    def on_mouse_press(self, x, y, button, modifiers):
+        &quot;&quot;&quot; Called when a mouse button is pressed. See pyglet docs for button
+        amd modifier mappings.
+
+        Parameters
+        ----------
+        x, y : int
+            The coordinates of the mouse click. Always center of the screen if
+            the mouse is captured.
+        button : int
+            Number representing mouse button that was clicked. 1 = left button,
+            4 = right button.
+        modifiers : int
+            Number representing any modifying keys that were pressed when the
+            mouse button was clicked.
+
+        &quot;&quot;&quot;
+        if self.exclusive:
+            vector = self.get_sight_vector()
+            block, previous = self.model.hit_test(self.position, vector)
+            if (button == mouse.RIGHT) or \
+                    ((button == mouse.LEFT) and (modifiers &amp; key.MOD_CTRL)):
+                # ON OSX, control + left click = right click.
+                if previous:
+                    self.model.add_block(previous, self.block)
+            elif button == pyglet.window.mouse.LEFT and block:
+                texture = self.model.world[block]
+                if texture != STONE:
+                    self.model.remove_block(block)
+        else:
+            self.set_exclusive_mouse(True)
+
+    def on_mouse_motion(self, x, y, dx, dy):
+        &quot;&quot;&quot; Called when the player moves the mouse.
+
+        Parameters
+        ----------
+        x, y : int
+            The coordinates of the mouse click. Always center of the screen if
+            the mouse is captured.
+        dx, dy : float
+            The movement of the mouse.
+
+        &quot;&quot;&quot;
+        if self.exclusive:
+            m = 0.15
+            x, y = self.rotation
+            x, y = x + dx * m, y + dy * m
+            y = max(-90, min(90, y))
+            self.rotation = (x, y)
+
+    def on_key_press(self, symbol, modifiers):
+        &quot;&quot;&quot; Called when the player presses a key. See pyglet docs for key
+        mappings.
+
+        Parameters
+        ----------
+        symbol : int
+            Number representing the key that was pressed.
+        modifiers : int
+            Number representing any modifying keys that were pressed.
+
+        &quot;&quot;&quot;
+        if symbol == key.W:
+            self.strafe[0] -= 1
+        elif symbol == key.S:
+            self.strafe[0] += 1
+        elif symbol == key.A:
+            self.strafe[1] -= 1
+        elif symbol == key.D:
+            self.strafe[1] += 1
+        elif symbol == key.SPACE:
+            if self.dy == 0:
+                self.dy = JUMP_SPEED
+        elif symbol == key.ESCAPE:
+            self.set_exclusive_mouse(False)
+        elif symbol == key.TAB:
+            self.flying = not self.flying
+        elif symbol in self.num_keys:
+            index = (symbol - self.num_keys[0]) % len(self.inventory)
+            self.block = self.inventory[index]
+
+    def on_key_release(self, symbol, modifiers):
+        &quot;&quot;&quot; Called when the player releases a key. See pyglet docs for key
+        mappings.
+
+        Parameters
+        ----------
+        symbol : int
+            Number representing the key that was pressed.
+        modifiers : int
+            Number representing any modifying keys that were pressed.
+
+        &quot;&quot;&quot;
+        if symbol == key.W:
+            self.strafe[0] += 1
+        elif symbol == key.S:
+            self.strafe[0] -= 1
+        elif symbol == key.A:
+            self.strafe[1] += 1
+        elif symbol == key.D:
+            self.strafe[1] -= 1
+
+    def on_resize(self, width, height):
+        &quot;&quot;&quot; Called when the window is resized to a new `width` and `height`.
+
+        &quot;&quot;&quot;
+        # label
+        self.label.y = height - 10
+        # reticle
+        if self.reticle:
+            self.reticle.delete()
+        x, y = self.width // 2, self.height // 2
+        n = 10
+        self.reticle = pyglet.graphics.vertex_list(4,
+            ('v2i', (x - n, y, x + n, y, x, y - n, x, y + n))
+        )
+
+    def set_2d(self):
+        &quot;&quot;&quot; Configure OpenGL to draw in 2d.
+
+        &quot;&quot;&quot;
+        width, height = self.get_size()
+        glDisable(GL_DEPTH_TEST)
+        viewport = self.get_viewport_size()
+        glViewport(0, 0, max(1, viewport[0]), max(1, viewport[1]))
+        glMatrixMode(GL_PROJECTION)
+        glLoadIdentity()
+        glOrtho(0, max(1, width), 0, max(1, height), -1, 1)
+        glMatrixMode(GL_MODELVIEW)
+        glLoadIdentity()
+
+    def set_3d(self):
+        &quot;&quot;&quot; Configure OpenGL to draw in 3d.
+
+        &quot;&quot;&quot;
+        width, height = self.get_size()
+        glEnable(GL_DEPTH_TEST)
+        viewport = self.get_viewport_size()
+        glViewport(0, 0, max(1, viewport[0]), max(1, viewport[1]))
+        glMatrixMode(GL_PROJECTION)
+        glLoadIdentity()
+        gluPerspective(65.0, width / float(height), 0.1, 60.0)
+        glMatrixMode(GL_MODELVIEW)
+        glLoadIdentity()
+        x, y = self.rotation
+        glRotatef(x, 0, 1, 0)
+        glRotatef(-y, math.cos(math.radians(x)), 0, math.sin(math.radians(x)))
+        x, y, z = self.position
+        glTranslatef(-x, -y, -z)
+
+    def on_draw(self):
+        &quot;&quot;&quot; Called by pyglet to draw the canvas.
+
+        &quot;&quot;&quot;
+        self.clear()
+        self.set_3d()
+        glColor3d(1, 1, 1)
+        self.model.batch.draw()
+        self.draw_focused_block()
+        self.set_2d()
+        self.draw_label()
+        self.draw_reticle()
+
+    def draw_focused_block(self):
+        &quot;&quot;&quot; Draw black edges around the block that is currently under the
+        crosshairs.
+
+        &quot;&quot;&quot;
+        vector = self.get_sight_vector()
+        block = self.model.hit_test(self.position, vector)[0]
+        if block:
+            x, y, z = block
+            vertex_data = cube_vertices(x, y, z, 0.51)
+            glColor3d(0, 0, 0)
+            glPolygonMode(GL_FRONT_AND_BACK, GL_LINE)
+            pyglet.graphics.draw(24, GL_QUADS, ('v3f/static', vertex_data))
+            glPolygonMode(GL_FRONT_AND_BACK, GL_FILL)
+
+    def draw_label(self):
+        &quot;&quot;&quot; Draw the label in the top left of the screen.
+
+        &quot;&quot;&quot;
+        x, y, z = self.position
+        self.label.text = '%02d (%.2f, %.2f, %.2f) %d / %d' % (
+            pyglet.clock.get_fps(), x, y, z,
+            len(self.model._shown), len(self.model.world))
+        self.label.draw()
+
+    def draw_reticle(self):
+        &quot;&quot;&quot; Draw the crosshairs in the center of the screen.
+
+        &quot;&quot;&quot;
+        glColor3d(0, 0, 0)
+        self.reticle.draw(GL_LINES)
+
+
+def setup_fog():
+    &quot;&quot;&quot; Configure the OpenGL fog properties.
+
+    &quot;&quot;&quot;
+    # Enable fog. Fog &quot;blends a fog color with each rasterized pixel fragment's
+    # post-texturing color.&quot;
+    glEnable(GL_FOG)
+    # Set the fog color.
+    glFogfv(GL_FOG_COLOR, (GLfloat * 4)(0.5, 0.69, 1.0, 1))
+    # Say we have no preference between rendering speed and quality.
+    glHint(GL_FOG_HINT, GL_DONT_CARE)
+    # Specify the equation used to compute the blending factor.
+    glFogi(GL_FOG_MODE, GL_LINEAR)
+    # How close and far away fog starts and ends. The closer the start and end,
+    # the denser the fog in the fog range.
+    glFogf(GL_FOG_START, 20.0)
+    glFogf(GL_FOG_END, 60.0)
+
+
+def setup():
+    &quot;&quot;&quot; Basic OpenGL configuration.
+
+    &quot;&quot;&quot;
+    # Set the color of &quot;clear&quot;, i.e. the sky, in rgba.
+    glClearColor(0.5, 0.69, 1.0, 1)
+    # Enable culling (not rendering) of back-facing facets -- facets that aren't
+    # visible to you.
+    glEnable(GL_CULL_FACE)
+    # Set the texture minification/magnification function to GL_NEAREST (nearest
+    # in Manhattan distance) to the specified texture coordinates. GL_NEAREST
+    # &quot;is generally faster than GL_LINEAR, but it can produce textured images
+    # with sharper edges because the transition between texture elements is not
+    # as smooth.&quot;
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST)
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST)
+    setup_fog()
+
+
+def main():
+    window = Window(width=800, height=600, caption='Pyglet', resizable=True)
+    # Hide the mouse cursor and prevent the mouse from leaving the window.
+    window.set_exclusive_mouse(True)
+    setup()
+    pyglet.app.run()
+
+
+if __name__ == '__main__':
+    main()
+
+</code></pre>
+</details>
+</li>
+</ol>
+<hr />
+<ul>
+<li>
 <p>Minecraft的创造者Notch</p>
 <p><a href="https://www.bilibili.com/video/av603948/">Minecraft：Mojang的故事</a></p>
 <p><a href="https://www.youtube.com/watch?v=BES9EKK4Aw4">Coding with Notch</a></p>
+</li>
+</ul>
 <hr />
-<p>微软公司的创办者比尔盖茨</p>
-<p><a href="https://www.youtube.com/playlist?list=PLzdnOPI1iJNcsRwJhvksEo1tJqjIqWbN-">计算机如何工作</a></p>
-<p><a href="https://code.org/minecraft">minecraft模拟编程</a></p>
+<ul>
+<li>
+<p>超级马里奥之父宫本茂</p>
+<p><a href="https://www.bilibili.com/video/av8211313/">宫本茂谈游戏设计：我从不随波逐流</a></p>
+</li>
+</ul>
 <hr />
+<ul>
+<li>
 <p>John Carmack</p>
 <p><a href="https://www.bilibili.com/video/BV1gs411Q76H">FPS游戏之父-约翰·卡马克</a></p>
 <p><a href="https://www.youtube.com/watch?v=ydyztGZnbNs">Oculus现场编程(racket)</a></p>
+</li>
+</ul>
 <hr />
-<p><a href="https://hourofpython.trinket.io/ke3-shi4-hua4-python-jian3-jie4#/wu1-gui1/ren4-shi2-tina">python编程一小时</a></p>
+<ul>
+<li>
+<p>微软公司的创办者比尔盖茨</p>
+<p><a href="https://www.youtube.com/playlist?list=PLzdnOPI1iJNcsRwJhvksEo1tJqjIqWbN-">计算机如何工作</a></p>
+<p><a href="https://code.org/minecraft">minecraft模拟编程</a></p>
+</li>
+</ul>
+<h2><a class="header" href="#a-hrefhttpshourofpythontrinketioke3-shi4-hua4-python-jian3-jie4wu1-gui1ren4-shi2-jimmypython编程一小时a" id="a-hrefhttpshourofpythontrinketioke3-shi4-hua4-python-jian3-jie4wu1-gui1ren4-shi2-jimmypython编程一小时a"><a href="https://hourofpython.trinket.io/ke3-shi4-hua4-python-jian3-jie4#/wu1-gui1/ren4-shi2-jimmy">python编程一小时</a></a></h2>
+<h3><a class="header" href="#画图乌龟" id="画图乌龟">画图乌龟</a></h3>
+<h4><a class="header" href="#认识tina" id="认识tina">认识Tina</a></h4>
+<p>Tina是一只你可以用代码控制的小乌龟。在IDE中运行下面代码：</p>
+<pre><code class="language-python">import turtle
+tina = turtle.Turtle()
+tina.shape('turtle')
+
+tina.penup()
+tina.forward(200)
+tina.write(&quot;你好，欢迎!&quot;)
+tina.backward(200)
+</code></pre>
+<p>去看看这个程序都做了些什么，再看看你是否能够辨认出是哪行代码让Tina说出了：&quot;你好，欢迎!&quot;。</p>
+<p>遇到看不懂的单词，查一查词典看你是否能理解它们的意思。</p>
+<p>不能完全理解这些代码？不用担心！你不需要现在就能上手，但是你会随着后面的进度对这些代码越来越熟悉。</p>
+<h3><a class="header" href="#移动" id="移动">移动</a></h3>
+<p>在上一个例子中我们发现，Tina会动！在她移动的时候，她会画一条线。她可以“向前”（forward）、“向后”（backward）以及“向右转”（right）或者“向左转”（left）指定角度。</p>
+<p>运行下面的例子来看看Tina是怎么动的：</p>
+<pre><code class="language-python">import turtle
+tina = turtle.Turtle()
+tina.shape(&quot;turtle&quot;)
+
+tina.forward(50)
+tina.left(90)
+tina.forward(50)
+tina.left(90)
+tina.forward(50)
+</code></pre>
+<p>她几乎就要画出一个正方形了！ 那么，你能不能帮助她完成这个正方形呢？你还能帮助Tina画出什么别的图形么？</p>
+<h3><a class="header" href="#说你好" id="说你好">说“你好”</a></h3>
+<p>你已经看到Tina会说&quot;你好&quot;，不过你还可以告诉她你的名字，然后她也会向你问好哦。</p>
+<pre><code class="language-python">import turtle
+tina = turtle.Turtle()
+tina.shape('turtle')
+
+tina.penup()
+tina.forward(200)
+tina.write(&quot;你好!&quot;)
+tina.backward(200)
+</code></pre>
+<p>首先，找到Tina说&quot;你好!&quot;的那行代码。然后对代码进行修改,让她向你问好。比如我的名字叫Jimmy,所以我就改成让她说:&quot;你好, Jimmy!&quot;</p>
+<p>你上面所写的程序可以用来和与你同名的人打招呼，那其他名字怎么办呢？ 我们可以写一个程序，通过input 函数让你输入自己的名字，这样Tina就能够知道每个人的名字了。下面请运行这个程序并输入你的名字：</p>
+<pre><code class="language-python">import turtle
+tina = turtle.Turtle()
+tina.shape('turtle')
+
+your_name = input(&quot;What's your name?&quot;)
+
+tina.penup()
+tina.forward(20)
+tina.write(&quot;你好, &quot; + your_name + &quot;!&quot;)
+tina.backward(20)
+</code></pre>
+<p>程序使用input函数来询问你的名字。你输入的任何内容都会被存储到一个变量之中。 Tina用这个变量去记住并且输出你名字。</p>
+<p>We can teach Tina to say anything we want using input. Can you add input 函数到这个程序，来指定Tina说出的内容？</p>
+<p>通过input函数，我们可以教Tina说出任何内容。试试你能否通过添加input函数到这个程序中使Tina能够叫出每一个运行这个程序的人的名字。 </p>
+<pre><code class="language-python">import turtle
+tina = turtle.Turtle()
+tina.shape('turtle')
+
+say_what = &quot;What should I say?&quot;
+
+tina.penup()
+tina.forward(20)
+tina.write(say_what)
+tina.backward(20)
+</code></pre>
+<p>提示：本程序中，say_what变量对应的是Tina所说出的内容。 想一想我们如何才能像上面一样运用input，使程序由任何一个运行这个程序的人决定变量的内容？</p>
+<h3><a class="header" href="#色彩" id="色彩">色彩</a></h3>
+<p>Tina能变身各种颜色！我们可以通过输入tina.color(&quot;blue&quot;)让她变成蓝色。</p>
+<p>运行：</p>
+<pre><code class="language-python">import turtle
+tina = turtle.Turtle()
+tina.shape('turtle')
+
+tina.left(90)
+tina.forward(20)
+tina.write(&quot;What color am I now?&quot;)
+
+tina.forward(20)
+tina.color(&quot;blue&quot;)
+tina.write(&quot;What color am I now?&quot;)
+
+tina.forward(20)
+tina.color(&quot;purple&quot;)
+tina.write(&quot;What color am I now?&quot;)
+
+tina.forward(20)
+tina.color(&quot;green&quot;)
+tina.write(&quot;What color am I now?&quot;)
+</code></pre>
+<p>图中的每个色彩线段都可以用下面的三行代码来实现：</p>
+<pre><code>tina.forward(20)
+tina.color(&quot;blue&quot;)
+tina.write(&quot;What color am I now?&quot;)
+</code></pre>
+<p>通过像这样添加更多的“三行代码”，你可以让Tina的色彩队列变出更多颜色。还可以让蓝色（&quot;blue&quot;）变成你喜欢的颜色，粉色（&quot;pink&quot;）？黄色（ &quot;yellow&quot;）还是蓝绿色（&quot;cyan&quot;）？统统由你决定！</p>
+<h3><a class="header" href="#tina-的笔" id="tina-的笔">Tina 的笔</a></h3>
+<p>像Tina这样的小乌龟都有一支笔可以边走边画。我们可以让他们“停笔”，然后他们就会只移动但不画线。我们也可以让他们“下笔”，这样他们就又可以一边移动一遍画线了。我们分别通过命令 penup() 和 pendown()来告诉他们“停笔”还是“下笔”。</p>
+<pre><code class="language-python">import turtle
+tina = turtle.Turtle()
+tina.shape('turtle')
+
+tina.penup()
+tina.goto(0,100)
+tina.write(&quot;I don't draw when my pen is up!&quot;)
+tina.goto(0,50)
+tina.pendown()
+tina.write(&quot;I do draw when my pen is down!&quot;)
+tina.goto(-50,50)
+</code></pre>
+<h3><a class="header" href="#tina-的网格" id="tina-的网格">Tina 的网格</a></h3>
+<p>Tina的 世界是一个网格，就像我们在代数和几何中用过的坐标轴。</p>
+<p>我们可以让Tina直接去到图中的一个指定点，这样能更容易地教她画画！</p>
+<pre><code class="language-python">import turtle
+tina = turtle.Turtle()
+tina.shape('turtle')
+
+tina.penup()
+tina.write(&quot;I start at 0, 0&quot;)
+
+tina.goto(100,100)
+tina.write(&quot;This is 100, 100&quot;)
+
+tina.goto(-100,-100)
+tina.write(&quot;This is -100, -100&quot;)
+
+tina.goto(100,-100)
+tina.write(&quot;This is 100, -100&quot;)
+
+tina.goto(-100,100)
+tina.write(&quot;This is -100, 100&quot;)
+
+tina.goto(-100, 0)
+</code></pre>
+<p>这个网格的横向和纵向的范围都是-200到200。你可以把Tina送到网格范围之外的地方，但是这样你就看不到她在干嘛了。</p>
+<pre><code class="language-python">import turtle
+tina = turtle.Turtle()
+tina.shape('turtle')
+
+tina.goto(200,200)
+tina.goto(-200,200)
+tina.goto(200,-200)
+tina.goto(-200,-200)
+tina.goto(0,0)
+
+tina.write(&quot;               This is how big my grid is!&quot;)
+</code></pre>
+<p>和Tina一起画画吧。用下面这行代码把她派到网格中其他的位置：</p>
+<pre><code>tina.goto(37,-50)
+</code></pre>
+<p>你可以选取任何数字，但是一定要在-200 到200的范围内你才能看到她。</p>
+<h3><a class="header" href="#圆圈" id="圆圈">圆圈</a></h3>
+<p>Tina可以画出不同大小的圆圈，有了圆圈就可以画鬼脸啦！</p>
+<pre><code class="language-python">import turtle
+tina = turtle.Turtle()
+tina.shape('turtle')
+
+tina.penup()
+tina.goto(30,-150)
+tina.pendown()
+tina.circle(130)
+tina.penup()
+tina.goto(0,0)
+tina.pendown()
+tina.circle(20)
+tina.circle(10)
+tina.penup()
+tina.forward(60)
+tina.right(45)
+tina.pendown()
+tina.circle(30)
+tina.circle(10)
+tina.penup()
+tina.right(90)
+tina.forward(90)
+tina.pendown()
+tina.circle(40)
+tina.penup()
+tina.goto(25,-25)
+</code></pre>
+<p>你能不能在图中再画一些鬼脸？</p>
+<p>小乌龟们还有“填充” （fill）技能！在圆圈中填上颜色，画起来更有趣。</p>
+<pre><code class="language-python">import turtle
+tina = turtle.Turtle()
+tina.shape('turtle')
+
+tina.penup()
+tina.begin_fill()
+tina.color('green')
+tina.goto(30,-150)
+tina.pendown()
+tina.circle(130)
+tina.penup()
+tina.end_fill()
+tina.color('white')
+tina.goto(0,0)
+tina.begin_fill()
+tina.pendown()
+tina.circle(20)
+tina.penup()
+tina.end_fill()
+tina.begin_fill()
+tina.color('black')
+tina.pendown()
+tina.circle(10)
+tina.penup()
+tina.end_fill()
+tina.forward(60)
+tina.right(45)
+tina.begin_fill()
+tina.color('white')
+tina.pendown()
+tina.circle(30)
+tina.penup()
+tina.end_fill()
+tina.begin_fill()
+tina.color('black')
+tina.pendown()
+tina.circle(10)
+tina.penup()
+tina.end_fill()
+tina.right(90)
+tina.forward(90)
+tina.begin_fill()
+tina.color('maroon')
+tina.pendown()
+tina.circle(40)
+tina.penup()
+tina.end_fill()
+tina.goto(25,-25)
+</code></pre>
+<h2><a class="header" href="#使用循环loops和列表lists重复" id="使用循环loops和列表lists重复">使用循环(Loops)和列表(Lists)重复</a></h2>
+<h3><a class="header" href="#数字列表" id="数字列表">数字列表</a></h3>
+<p>现在，我们已经写出了我们想让Tina每次移动的长度。我们可以用一个数字列表和一个循环让她重复移动。</p>
+<pre><code class="language-python">import turtle
+tina = turtle.Turtle()
+tina.shape('turtle')
+
+number_list = [1,2,3,4,5,6,7,8,9,10] 
+
+tina.color(&quot;green&quot;) 
+for number in number_list: 
+    tina.forward(number*10) 
+    tina.left(60)
+</code></pre>
+<p>通过代码 number_list = [1,2,3,4,5,6,7,8,9,10]，可以告诉Tina移动的长度。你能不能改变列表中的数字来改变Tina的移动呢？一定要记得在列表的开始和结束加上方括号([])，还有在每两个数字中间使用逗号(,)。</p>
+<h3><a class="header" href="#列表循环" id="列表循环">列表循环</a></h3>
+<p>现在，我们已经让Tina重复的做一件事情。复习一下下面这个例子：</p>
+<pre><code class="language-python">import turtle
+tina = turtle.Turtle()
+tina.shape('turtle')
+
+tina.left(90)
+tina.forward(20)
+tina.write(&quot;What color am I now?&quot;)
+
+tina.forward(20)
+tina.color(&quot;blue&quot;)
+tina.write(&quot;What color am I now?&quot;)
+
+tina.forward(20)
+tina.color(&quot;purple&quot;)
+tina.write(&quot;What color am I now?&quot;)
+
+tina.forward(20)
+tina.color(&quot;green&quot;)
+tina.write(&quot;What color am I now?&quot;)
+</code></pre>
+<p>这段代码中有很多的重复。如果我们给Tina列出色彩列表并且告诉她用每一种颜色做同样的事情， 就可以使用更短短代码来画出同样短图了。</p>
+<pre><code class="language-python">import turtle
+tina = turtle.Turtle()
+tina.shape('turtle')
+
+color_list = [&quot;black&quot;, &quot;blue&quot;, &quot;purple&quot;, &quot;green&quot;]
+
+tina.left(90)
+
+for color in color_list:
+    tina.forward(20)
+    tina.color(color)
+    tina.write(&quot;What color am I now?&quot;)
+</code></pre>
+<p>我们还可以很容易的改变让Tina画图的次数。 试试在列表中增加一个新的颜色名字，比如下面的列表增加了黄色&quot;yellow&quot; 。</p>
+<pre><code class="language-python">color_list = [&quot;black&quot;, &quot;blue&quot;, &quot;purple&quot;, &quot;green&quot;, &quot;yellow&quot;]
+</code></pre>
+<p>别忘了在新增的颜色名称上加引号(&quot;&quot;)！</p>
+<p>遇到障碍了？没关系！这里是一些小提示：</p>
+<pre><code>记得在颜色名称上加引号(&quot;&quot;)
+记得在列表中每两个相邻的色彩名称之间加逗号(,)
+记得在列表的开始和结束加上方括号([ ])
+</code></pre>
+<h3><a class="header" href="#改变颜色" id="改变颜色">改变颜色</a></h3>
+<p>我们可以给出一个色彩列表循环并让Tina变成指定的颜色。</p>
+<p>运行这个程序，看看这些颜色都是怎么来的。如果从列表中增加或者减少一个颜色会怎样？</p>
+<pre><code class="language-python">import turtle
+tina = turtle.Turtle()
+tina.shape('turtle')
+
+colors = [&quot;red&quot;, &quot;orange&quot;, &quot;yellow&quot;, &quot;green&quot;, &quot;blue&quot;, &quot;purple&quot;, &quot;black&quot;]
+
+for each_color in colors:
+    angle = 360 / len(colors)
+    tina.color(each_color)
+    tina.circle(40)
+    tina.right(angle)
+    tina.forward(30)
+</code></pre>
+<p>想要自己编一个程序？你可以更改在for循环中Tina的活动看看在每一种颜色下她还可以做些什么。</p>
+<h2><a class="header" href="#多个乌龟" id="多个乌龟">多个乌龟</a></h2>
+<h3><a class="header" href="#乌龟就是对象" id="乌龟就是对象">“乌龟”就是“对象”</a></h3>
+<p>Tina 是一只小乌龟turtle。但是什么是turtle呢？我们称之为“对象”object，也就是程序员写好的一些可以为你所用的现成的代码。 在Tina的例子中，她知道怎么前进（forward），后退（backward），向左转（left）和向右转（right）是因为写turtle的人已经将这些技能配置给了小乌龟。</p>
+<p>在所有例子的最开始，我们都先import turtle也就是导入turtle这个对象。这样我们就可以调用这些已经写好的代码给Tina 和其他的乌龟配置技能了。</p>
+<p>你可以Tina取一个别的名字，而且这个新命名都乌龟也会知道怎么去做Tina能够做的事。请在下面的例子中给Tina一个新名字吧：</p>
+<pre><code class="language-python">import turtle
+
+tina = turtle.Turtle()
+tina.shape('turtle')
+
+tina.forward(100)
+</code></pre>
+<p>提示：你必须把所有的'Tina'都改成你要改的名字。否则，Python就会弄不清楚你的代码。</p>
+<h3><a class="header" href="#tina-和-tommy-的颜色" id="tina-和-tommy-的颜色">Tina 和 Tommy 的颜色</a></h3>
+<p>我们不仅可以给乌龟们重新命名：我们还可以有更多的乌龟！让我给Tina带来一个叫Tommy的新朋友：</p>
+<pre><code class="language-python">import turtle
+
+tina = turtle.Turtle()
+tina.shape('turtle')
+tina.color('black')
+
+tina.left(90)
+tina.forward(100)
+tina.write(&quot;I'm Tina!&quot;)
+tina.forward(20)
+tina.right(90)
+
+tommy = turtle.Turtle()
+tommy.shape('turtle')
+tommy.color('black')
+
+tommy.right(90)
+tommy.forward(100)
+tommy.write(&quot;I'm Tommy!&quot;)
+tommy.forward(20)
+tommy.left(90)
+</code></pre>
+<p>Tina和Tommy都用黑色画画，你能不能通过更改代码tina.color('black') 和 tommy.color('black') 使他们可以使用不同都颜色？不知道换成什么？试试不那么常见的颜色吧，比如金黄色'goldenrod' 或者洋红色 'magenta'。别忘了加引号 (')！</p>
+<h2><a class="header" href="#if-else-语句" id="if-else-语句">if-else 语句</a></h2>
+<h3><a class="header" href="#讲逻辑的乌龟" id="讲逻辑的乌龟">讲逻辑的乌龟</a></h3>
+<p>小乌龟们是非常讲逻辑的，他们可以根据我们的指令改变任务。</p>
+<p>运行下面这个程序并回答问题，Tina会告诉你你的答案是否正确。</p>
+<pre><code>import turtle
+
+tina = turtle.Turtle()
+
+Guess = int(input(&quot;What is 2 X 7?&quot;))
+
+if Guess == 2*7:
+    tina.write(str(Guess) + ' is correct!')
+    tina.penup()
+    tina.backward(10)
+else:
+    tina.write('You said ' + str(Guess) + '. I got ' + str(2*7))
+    tina.penup()
+    tina.backward(10)
+</code></pre>
+<p>你还能让Tina问些什么？试试改变数学题的数字。</p>
+<h3><a class="header" href="#tina-询问年龄" id="tina-询问年龄">Tina 询问年龄</a></h3>
+<p>小乌龟们可以判断两个数字大小。下面我们来写一个询问年龄的程序：</p>
+<pre><code>import turtle
+tina = turtle.Turtle()
+tina.shape('turtle')
+tina.penup()
+
+try:
+    age = int(input(&quot;How old are you? (Use numbers)&quot;))
+    if age &gt;= 10 and age &lt;= 15:
+        tina.write(&quot;You're between 10 and 15 years old&quot;)
+        tina.backward(20)
+    elif age &lt; 10:
+        tina.write(&quot;You're less than 10 years old&quot;)
+        tina.backward(20)
+    elif age &gt; 15:
+        tina.write(&quot;You're over 15 years old&quot;)
+        tina.backward(20)
+except:
+    tina.backward(100)
+    tina.write(&quot;I don't think I understand that age.  Are you using numbers?&quot;)
+    tina.backward(20)
+</code></pre>
+<p>高级：上面的例子中有一个”尝试“（try:）和一个“除了”（except:）。这些命令行将会试着运行try:后面的代码，如果出错的话，就运行except:中的部分。这就Tina判断你的答案是否正确（比如15）的过程。这也是真正的程序员怎么根据可能出现的错误来更改程序。</p>
+<h3><a class="header" href="#高还是低" id="高还是低">高还是低？</a></h3>
+<p>Tina可以向我们提问，我们也可以让她自己问自己。在这个例子中，我们让她去屏幕上的一个高点和一个低点，她的回答就会根据她所在的高度而改变。</p>
+<pre><code>import turtle
+tina=turtle.Turtle()
+tina.shape('turle')
+tina.penup()
+
+try:
+    how_high = int(input(&quot;How high should Tina go? (Use numbers between 200 and -200)&quot;))
+    tina.goto(0, how_high)
+    height = tina.pos()[1]
+
+    if height &gt; 150 and height &lt;= 200:
+        tina.write(&quot;This is very high!&quot;)
+    elif height &gt; 100 and height &lt;= 150:
+        tina.write(&quot;This is high!&quot;)
+    elif height &gt; 0 and height &lt;= 100:
+        tina.write(&quot;This is high but not too high!&quot;)
+    elif height &gt; -100 and height &lt;= 0:
+        tina.write(&quot;This is low but not too low!&quot;)
+    elif height &gt; -150 and height &lt;= -100:
+        tina.write(&quot;This is low!&quot;)
+    elif height &gt;= -200 and height &lt;= -150:
+        tina.write(&quot;This is very low!&quot;)
+    else:
+        raise
+except:
+    tina.backward(100)
+    tina.write(&quot;Hey, that's not a number between 200 and -200!&quot;)    
+    tina.backward(20)
+</code></pre>
+<p>调整这个程序，你可以从以下几个方面考虑：</p>
+<ul>
+<li>试着改变在不同的高度Tina所说的话</li>
+<li>试着改变高度</li>
+<li>除此之外你还可以试着改变在不同的高度Tina所做的动作。现在她只是写出了一句话，除此之外她还能做些什么？</li>
+</ul>
+<h4><a class="header" href="#更多细节" id="更多细节">更多细节</a></h4>
+<p>想知道更多关于if, elif, 和else是如何使用的？在第9行（ Line 9），tina.pos()[1] 询问了Tina她所在的网格有多高。elif 是&quot;else if&quot;的缩写。关于高度的验证会一致进行直到答案值为真（true）。如果没有一次的验证结果为真，程序就会移动到else下面到缩进行（indented lines）。在Python中，else的意思是“如果所有的其他的验证都失败，则运行这个”。else模块中的raise表示出现了一个错误，意思是转至except模块。这就是为什么在－200到200的范围内，无论你输入什么数字这个程序可以做出不同的回应。</p>
+<p>如果在你编程的第一个小时内不能完全理解这些内容也不用担心，像if, elif, else, raise, 和 except这样的工具，随着编程练习的增多，你会和别的程序员一样越用越上手。</p>
+<h2><a class="header" href="#函数" id="函数">函数</a></h2>
+<h3><a class="header" href="#函数就是菜谱" id="函数就是菜谱">函数就是菜谱！</a></h3>
+<p>通过“函数”我们可以让程序记住我们写好的代码并重复使用，就像菜谱一样。</p>
+<p>我们可以用函数教Tina做更多事情。我们通过输入def来定义一个新的函数，然后输入函数名，一对括号(())最后加上冒号 (:)。下面就是一个叫做first_function的新函数：</p>
+<p><code>def first_function():</code></p>
+<p>定义一个函数之后，我们可以通过另起一行并且“缩进”（indenting）在函数内写代码。“缩进”（indenting）就是在行首空四格：</p>
+<pre><code>def first_function():
+    print &quot;This line is indented 4 spaces!&quot;
+</code></pre>
+<p>定义一个函数之后，我们可以通过输入函数名和一对括号（()）调用（call ）这个函数。就像下面这样：</p>
+<p><code>first_function()</code></p>
+<p>当我们调用一个函数的时候，这个函数内包含的所有命令都会被执行。</p>
+<p>在下面的例子中，已经为你定义好了一个函数叫做triangle()，并且已经调用里一次。你可以调用它一次或者更多次看看它有何表现。</p>
+<pre><code>import turtle
+tina=turtle.Turtle()
+tina.shape('turtle')
+tina.color('purple')
+
+def triangle():
+    tina.left(60)
+    tina.forward(30)
+    tina.left(120)
+    tina.forward(30)
+    tina.left(120)
+    tina.forward(30)
+
+triangle()
+</code></pre>
+<p>你可以这样更改这个程序：</p>
+<ul>
+<li>改变triangle() 函数，然后Tina就会按照新的命令执行</li>
+<li>试着写出并调用你自己的函数</li>
+</ul>
+<h3><a class="header" href="#做-5-个蛋糕" id="做-5-个蛋糕">做 5 个蛋糕</a></h3>
+<p>使用函数最大的优点之一就是它可以自动重复执行复杂的命令而不用我们再反复输入代码。</p>
+<p>之前我们说过“函数就像菜谱”。在这个练习中，我们教了Tina “蛋糕菜谱”而且她已经画了三个蛋糕。请在这个程序的下面，通过调用函数，给出不同位置的x和y ，让她画出更多的蛋糕。</p>
+<p>那她应该画多少蛋糕？</p>
+<pre><code>import turtle
+tina=turtle.Turtle()
+tina.shape('turtle')
+
+def make_cake(x=0, y=0):
+    tina.penup()
+    tina.color('pink')
+    tina.goto(x, y)
+    tina.pendown()
+    tina.begin_fill()
+    tina.goto(x + 20, y)
+    tina.goto(x + 20, y + 20)
+    tina.goto(x - 20, y + 20)
+    tina.goto(x - 20, y)
+    tina.goto(x, y)  
+    tina.end_fill()
+    tina.goto(x, y + 20)
+    tina.color('yellow')
+    tina.goto(x, y + 35)
+    tina.goto(x, y + 30)
+    tina.color('black')
+    tina.goto(x, y + 20)
+    tina.penup()
+    tina.goto(x, y + 10)
+
+make_cake(0,0)
+make_cake(-100,0)
+make_cake(100,0)
+</code></pre>
+<p>提示：make_cake()函数中第一个数字代表Tina在开始画画之前应该向左还是向右多远而第二个是多高或多低。</p>
+<h3><a class="header" href="#说-hello" id="说-hello">说 “Hello！”</a></h3>
+<p>虽然函数就是菜谱，但是我们还可以给它们加入一种特殊的输入叫做“参数”parameters。参数parameters可以使得这些函数每次运行起来有所不同。实际上，我们已经在之前已经应用过了。</p>
+<p>在之前的例子中，Tina可以做蛋糕，我们用x 和 y 坐标来表示在哪里做蛋糕。我们就是像这样告诉她在x,y坐标 0,100处做蛋糕的。</p>
+<p><code>make_cake(0,100)</code></p>
+<p>我们输入的x 和 y 就是“参数” parameters。我们可以通过在定义函数时在函数名后面的括号中包含参数，使这个函数成为有参数的函数。</p>
+<pre><code>def my_function(parameter):
+    print(parameter)
+
+my_function(&quot;Hello!&quot;)
+my_function(&quot;Bonjour!&quot;)
+</code></pre>
+<p>上面的例子中，我们调用了函数my_function 两次，一次用了&quot;Hello!&quot;作为参数，另一次用了参数&quot;Bonjour!&quot;。函数做的是同一件事情，就是打印参数，但是我们需要告诉它打印的内容。</p>
+<p>不错，这就意味着我们可以写一个函数，然后然后这个函数告诉Tina怎么打印不同的东西。</p>
+<p>你能不能更改下面的例子，用不同的参数 parameter调用函数 say() ？</p>
+<pre><code>import turtle
+tina = turtle.Turtle()
+tina.shape('turtle')
+
+tina.penup()
+tina.goto(-60,175)
+
+def say(something):
+    x, y = tina.pos()
+    tina.write(&quot;You told me to say this:&quot;)
+    tina.goto(x + 10, y -10)
+    tina.write(something)
+    tina.goto(x, y - 25)
+
+say(&quot;Hi there!&quot;)
+say(&quot;Hi there!&quot;)
+say(&quot;Hi there!&quot;)
+say(&quot;Hi there!&quot;)
+say(&quot;Hi there!&quot;)
+say(&quot;Hi there!&quot;)
+say(&quot;Hi there!&quot;)
+</code></pre>
+<p>提示：</p>
+<ul>
+<li>Tina要说出的内容必须用引号(&quot;) 引用才能够读出</li>
+<li>只需要用say(&quot;你要说的话&quot;)写出更多的命令行，你就可以让Tina说更多的内容</li>
+</ul>
+<h2><a class="header" href="#总结一下" id="总结一下">总结一下！</a></h2>
+<h3><a class="header" href="#选取一个开放性练习" id="选取一个开放性练习">选取一个开放性练习</a></h3>
+<p>我们在一段很短的时间里已经学到了相当多的技能！</p>
+<p>接下来是一个开放式的练习，完成这个练习并将它分享给你的朋友，老师和父母吧！</p>
+<p>你可以从下面两个练习中选择一个。</p>
+<h3><a class="header" href="#1-tina-和-tommy-的画" id="1-tina-和-tommy-的画">1. Tina 和 Tommy 的画</a></h3>
+<p>让我们和Tina还有Tommy一起画画吧！</p>
+<p>请记得，因为他们俩都是turtle对象，所有我们可以让他们前进forward和后退backward，让他们向左转left和向右转 right。去到goto一个指定的点，改变他们的颜色color，以及让他们在屏幕上写 write出单词。在他们名字后面增加一个带有数值的命令，就告诉Tina和Tommy做些什么了。</p>
+<pre><code>tina.forward(100)
+
+tommy.goto(50,50)
+</code></pre>
+<p>goto用来画图是极方便的。</p>
+<p>这里有一个Tina和Tommy的小程序，等待你的命令。增加命令并运行看看他们是执行了什么活动。一直画下去知道得到你想要都图。在你画完都时候，用菜单条中的分享（Share）链接把你的成果分享给你的老师或朋友们吧！</p>
+<pre><code>import turtle
+
+tina = turtle.Turtle()
+tommy = turtle.Turtle()
+
+tina.color('blue')
+tommy.color('green')
+
+tina.shape('turtle')
+tommy.shape('turtle')
+
+tina.begin_fill()
+tina.goto(200,0)
+tina.goto(200,-200)
+tina.goto(-200,-200)
+tina.goto(-200,0)
+tina.goto(0,0)
+tina.end_fill()
+
+tommy.penup()
+tommy.goto(-70,100)
+tommy.write(&quot;Tina, let's Make a picture together!&quot;)
+tommy.goto(0,50)
+tommy.pendown()
+
+tina.penup()
+tina.color('white')
+tina.goto(-40,-100)
+tina.write(&quot;Alright, I'm ready!!&quot;)
+tina.goto(0,-130)
+tina.pendown()
+</code></pre>
+<p>如果你运行出错，检查并确保你的括号()，和引号'都在正确都位置。如果你想重新来过，可以在例子左边都菜单中点击重置（Reset）。</p>
+<h3><a class="header" href="#2-写一首诗" id="2-写一首诗">2. 写一首诗</a></h3>
+<p>因为Tina知道怎么在屏幕上打字，你可以教她写一首诗。 这个例子提供了一个可以用来写诗的line()函数和一个可以注明自己是作者的by()函数。</p>
+<pre><code>import turtle
+tina = turtle.Turtle()
+tina.shape('turtle')
+tina.penup()
+
+def line(words, horiz_pos = -50):
+    x,y = tina.pos()
+    tina.goto(max(horiz_pos, -190), y)
+    tina.write(words)
+    x,y = tina.pos()
+    tina.goto(x, y - 25)
+
+def by(author):
+    x,y = tina.pos()
+    tina.goto(x + 70, max( -190, y -30))
+    tina.write(author)
+    x,y = tina.pos()
+    tina.goto(0, y)
+
+tina.goto(-50, 190)
+line(&quot;Snow in my shoe&quot;)
+line(&quot;Abandoned&quot;)
+line(&quot;Sparrow's nest&quot;)
+by(&quot;Jack Kerouac&quot;)
+</code></pre>
+<p>坚持写写到你满意为止！</p>
+<p>提示：</p>
+<ul>
+<li>你可以从替换现有程序中的 line()函数的调用开始</li>
+<li>如果你的诗需要超过3行，增加新的line() 函数以调用新的行</li>
+<li>如果你想要空一行，使用空字符串： &quot; &quot;</li>
+<li>如果因为句子太长，你想让每行从最左边开始，增加一个逗号(,) ，然后给一个大于－200的负值：
+<code>line(&quot;This line will be far to the left&quot;, -190)</code></li>
+</ul>
+<h4><a class="header" href="#名诗鉴赏" id="名诗鉴赏">名诗鉴赏</a></h4>
+<p>想不出来怎么写诗？ 试试从这些经典诗作中选择几行。不用重新打字输入，你可以复制和粘贴这些诗行：</p>
+<pre><code>相信未来
+
+郭路生
+
+当蜘蛛网无情地查封了我的炉台，
+当灰烬的余烟叹息着贫困的悲哀，
+我依然固执地铺平失望的灰烬，
+用美丽的雪花写下：相信未来。
+
+When cobwebs relentlessly clog my stove
+When its dying smoke sighs for poverty
+I will stubbornly dig out the disappointing ash
+And write with beautiful snowflakes:
+Believe in the Future.
+
+当我的紫葡萄化为深秋的露水，
+当我的鲜花依偎在别人的情怀，
+我依然固执地用凝霜的枯藤，
+在凄凉的大地上写下：相信未来。
+
+When my overripe grapes melt into late autumn dew
+When my fresh flower lies in another's arms
+I will stubbornly write on the bleak earth
+With a dry frozen vine:
+Believe in the Future.
+
+我要用手指那涌向天边的排浪，
+我要用手掌那托起太阳的大海，
+摇曳着曙光那支温暖漂亮的笔杆，
+用孩子的笔体写下：相信未来。
+
+I point to the waves billowing in the distance
+I want to be the sea that holds the sun in its palm
+Take hold of the beautiful warm pen of the dawn
+And write with a child-like hand:
+Believe in the Future.
+
+我之所以坚定地相信未来，
+是我相信未来人们的眼睛——
+她有拨开历史风尘的睫毛，
+她有看透岁月篇章的瞳孔。
+
+The reason why I believe so resolutely in the future is:
+I believe in the eyes of the people of the future
+Their eyelashes that can brush away the ash of history
+Their pupils that can see through the texts of time.
+
+不管人们对于我们腐烂的皮肉，
+那些迷途的惆怅，失败的苦痛，
+是寄予感动的热泪，深切的同情，
+还是给以轻蔑的微笑，辛辣的嘲讽。
+
+It doesn't matter whether people shed contrite tears
+For our rotten flesh, or our hesitancy, or the bitterness of our failure
+Whether they view us with sneers or deep-felt sympathy
+Or scornful smiles or pungent satire.
+
+我坚信人们对于我们的脊骨，
+那无数次地探索、迷途、失败和成功，
+一定会给予热情、客观、公正的评定，
+是的，我焦急地等待着他们的评定。
+
+I firmly believe that people will judge our spines
+And our endless explorations, losses, failures and successes
+With an enthusiastic, objective and fair evaluation
+Yes, I await their judgement anxiously.
+
+朋友，坚定地相信未来吧，
+相信不屈不挠的努力，
+相信战胜死亡的年轻，
+相信未来，热爱生命。
+
+Friends, please let us believe in the future
+Believe in our unbending striving
+Believe in our youth that can conquer death
+Believe in the Future: believe in Life.
+</code></pre>
+<h2><a class="header" href="#你做到了" id="你做到了">你做到了！</a></h2>
+<p>我们在很短的时间已经学习了这么多！</p>
+<p>我们是从一个类似于下面的例子中开始学习的，请回顾一下你都学到了什么？</p>
+<p>如果你能和你的小伙伴们一起，写代码会变得更有趣！</p>
+<hr />
+<p>本课程的上线要特别感谢下面这些人的建议，测试和其他贡献：</p>
+<pre><code>Dr. Jerry Martin
+Dorai Thodla
+Mark Ahrens
+Karen Kaun
+Frolian Irizarry
+Kevin Shockey
+Baker Franke
+Aleksandar Pavlov
+Allan Anderson
+Ramya Vellingiri
+</code></pre>
+<p>Extra, extra thanks go out to Jinzhe Liang for translating this lesson to Mandarin and to Boyang Hu for proofreading and suggesting edits. We would not have been able to provide this lesson without their effort!</p>
+<h2><a class="header" href="#正确的打印输出方式" id="正确的打印输出方式">正确的打印输出方式</a></h2>
+<p>在前面的章节中，我们可以让小乌龟打印信息，像这样：</p>
+<pre><code>import turtle
+tina = turtle.Turtle()
+
+tina.write(&quot;你好!&quot;)
+</code></pre>
+<p>其实还有另外一种更简单的方式，只需要一行代码：<code>print(&quot;您好&quot;)</code>
+注意这里的<code>print</code>后面是有括号的。</p>
+<p>print还可以打印</p>
+<ul>
+<li>整数：<code>print(100)</code></li>
+<li>小数：<code>print(0.6)</code></li>
+<li>负数：<code>print(-200)</code></li>
+<li>表达式：<code>print(127 + 325 * 2)</code></li>
+<li>表达式：<code>print(64 / 2 - 4)</code></li>
+<li>变量：
+<pre><code>a = 100
+print(a)
+print(a * 5)
+</code></pre>
+</li>
+</ul>
+<p>变量本身也是可以被修改的并打印的：</p>
+<pre><code>  a = 100   # 满分一百分
+  a = a - 6 # 做错了一道填空题，扣6分
+  a = a - 4 # 一道选择题，扣4分
+  print(a)  # 最后打印出来分数？
+</code></pre>
+<p>##《父与子的编程之路》</p>
+<p>《父与子的编程之路》中默认使用的是python2，你使用的是新版本的python3，需要注意不同，书的附录B中作了说明。</p>
+<p>开篇程序不懂或不能运行没有关系，可以从第二章开始学习。要注意python3里面的print(), input()的不同哦。</p>
+<p>打字不太熟练的话，可以登录<a href="https://www.typingclub.com/">https://www.typingclub.com/</a>练习。</p>
+<p>重要的是要能够自主学习，编程最大的好处是能在电脑上自己实践，及时得到反馈。不过有不懂的问题可以欢迎来请教哦。</p>
 
                     </main>
 
@@ -441,6 +2121,21 @@ tommy.goto(0,-80)
 
         </div>
 
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
         
 
         

@@ -27,32 +27,20 @@
 ---
 
 - 安装pygame
-  - 点击菜单"工具", 选择第一个子菜单"管理器"
 
-    <img src="pkg_1.jpg">
+  点击菜单"工具", 选择第一个子菜单"管理器"。出现包管理器界面，搜索"pygame":
 
-  - 出现包管理器界面
+  <video width="480" height="320" controls="controls"><source src="./pkg.mp4" type="video/mp4"></video>
 
-    <img src="pkg_2.jpg">
-
-  - 搜索"pygame"，从国内访问可能比较慢，等待"Search results"(搜索结果)出现
-
-    <img src="pkg_3.jpg">
-
-  - 从Search results(搜索结果)中点击"pygame"，安装可能需要一段时间完成
-
-    <img src="pkg_4.jpg">
-
-  - 安装完成如下,点击"关闭"即可
-
-    <img src="pkg_5.jpg">
+  从国内访问可能比较慢，等待"Search results"(搜索结果)出现后，点击"pygame"，
+  安装可能需要一段时间完成, 最后点击"关闭"即可。
 
 # 2. 体验python语言的魔法
 
 - 第一个游戏程序: [碰撞气球](https://www.pygame.org/docs/tut/PygameIntro.html)
-  - 右键保存，下载气球图标到桌面，注意保存文件名必须为intro_ball
+  - 点击下载气球图标到桌面，注意保存文件名必须为intro_ball
 
-    <img src="intro_ball.gif">
+    <a href="intro_ball.gif" download><img src="intro_ball.gif"></a>
 
   - 点击下面代码右上角图标进行拷贝，到Thonny IDE文本区按CTRL+V粘贴
     ```python
@@ -120,7 +108,7 @@
 
 - 认识Turtle(小乌龟)画图
   - 让电脑来[画画](https://www.geeksforgeeks.org/y-fractal-tree-in-python-using-turtle/) 
-  - 在Thonny IDE上新建一个新的文件：选菜单"文件" --> "新建"
+  - 在Thonny IDE上新建一个新的文件：选菜单"File(文件)" --> "New(新文件)"
   - 同样点击下面代码右上角图标进行拷贝，按CTRL+V粘贴到Thonny文本区
 
     ```
