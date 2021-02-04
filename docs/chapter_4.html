@@ -163,9 +163,9 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h2><a class="header" href="#正确的打印输出方式" id="正确的打印输出方式">正确的打印输出方式</a></h2>
+                        <h3><a class="header" href="#正确的打印输出方式" id="正确的打印输出方式">正确的打印输出方式</a></h3>
 <p>在前面的章节中，我们可以让小乌龟打印信息，像这样：</p>
-<pre><code>import turtle
+<pre><code class="language-python">import turtle
 tina = turtle.Turtle()
 
 tina.write(&quot;你好!&quot;)
@@ -180,19 +180,19 @@ tina.write(&quot;你好!&quot;)
 <li>表达式：<code>print(127 + 325 * 2)</code></li>
 <li>表达式：<code>print(64 / 2 - 4)</code></li>
 <li>变量：
-<pre><code>a = 100
+<pre><code class="language-python">a = 100
 print(a)
 print(a * 5)
 </code></pre>
 </li>
 </ul>
 <p>变量本身也是可以被修改的并打印的：</p>
-<pre><code>  a = 100   # 满分一百分
+<pre><code class="language-python">  a = 100   # 满分一百分
   a = a - 6 # 做错了一道填空题，扣6分
   a = a - 4 # 一道选择题，扣4分
   print(a)  # 最后打印出来分数？
 </code></pre>
-<p>##《父与子的编程之路》</p>
+<h3><a class="header" href="#父与子的编程之路" id="父与子的编程之路">《父与子的编程之路》</a></h3>
 <p>《父与子的编程之路》中默认使用的是python2，你使用的是新版本的python3，需要注意不同，书的附录B中作了说明。</p>
 <p>开篇程序不懂或不能运行没有关系，可以从第二章开始学习。要注意python3里面的print(), input()的不同哦。</p>
 <p>打字不太熟练的话，可以登录<a href="https://www.typingclub.com/">https://www.typingclub.com/</a>练习。</p>
@@ -227,21 +227,6 @@ print(a * 5)
 
         </div>
 
-        
-        <!-- Livereload script (if served using the cli tool) -->
-        <script type="text/javascript">
-            var socket = new WebSocket("ws://localhost:3000/__livereload");
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
         
 
         
