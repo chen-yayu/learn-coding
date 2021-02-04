@@ -77,8 +77,6 @@ tina.backward(20)
 
 程序使用input函数来询问你的名字。你输入的任何内容都会被存储到一个变量之中。 Tina用这个变量去记住并且输出你名字。
 
-We can teach Tina to say anything we want using input. Can you add input 函数到这个程序，来指定Tina说出的内容？
-
 通过input函数，我们可以教Tina说出任何内容。试试你能否通过添加input函数到这个程序中使Tina能够叫出每一个运行这个程序的人的名字。 
 
 ```python
@@ -367,10 +365,9 @@ color_list = ["black", "blue", "purple", "green", "yellow"]
 别忘了在新增的颜色名称上加引号("")！
 
 遇到障碍了？没关系！这里是一些小提示：
-
-    记得在颜色名称上加引号("")
-    记得在列表中每两个相邻的色彩名称之间加逗号(,)
-    记得在列表的开始和结束加上方括号([ ])
+  - 记得在颜色名称上加引号("")
+  - 记得在列表中每两个相邻的色彩名称之间加逗号(,)
+  - 记得在列表的开始和结束加上方括号([ ])
 
 ### 改变颜色
 
@@ -713,7 +710,7 @@ tommy.goto(50,50)
 
 goto用来画图是极方便的。
 
-这里有一个Tina和Tommy的小程序，等待你的命令。增加命令并运行看看他们是执行了什么活动。一直画下去知道得到你想要都图。在你画完都时候，用菜单条中的分享（Share）链接把你的成果分享给你的老师或朋友们吧！
+这里有一个Tina和Tommy的小程序，等待你的命令。增加命令并运行看看他们是执行了什么活动。一直画下去知道得到你想要都图。在你画完都时候，把你的成果分享给你的老师或朋友们吧！
 
 ```
 import turtle
@@ -804,73 +801,21 @@ by("Jack Kerouac")
 我依然固执地铺平失望的灰烬，
 用美丽的雪花写下：相信未来。
 
-When cobwebs relentlessly clog my stove
-When its dying smoke sighs for poverty
-I will stubbornly dig out the disappointing ash
-And write with beautiful snowflakes:
-Believe in the Future.
-
 当我的紫葡萄化为深秋的露水，
 当我的鲜花依偎在别人的情怀，
 我依然固执地用凝霜的枯藤，
 在凄凉的大地上写下：相信未来。
-
-When my overripe grapes melt into late autumn dew
-When my fresh flower lies in another's arms
-I will stubbornly write on the bleak earth
-With a dry frozen vine:
-Believe in the Future.
 
 我要用手指那涌向天边的排浪，
 我要用手掌那托起太阳的大海，
 摇曳着曙光那支温暖漂亮的笔杆，
 用孩子的笔体写下：相信未来。
 
-I point to the waves billowing in the distance
-I want to be the sea that holds the sun in its palm
-Take hold of the beautiful warm pen of the dawn
-And write with a child-like hand:
-Believe in the Future.
-
 我之所以坚定地相信未来，
 是我相信未来人们的眼睛——
 她有拨开历史风尘的睫毛，
 她有看透岁月篇章的瞳孔。
 
-The reason why I believe so resolutely in the future is:
-I believe in the eyes of the people of the future
-Their eyelashes that can brush away the ash of history
-Their pupils that can see through the texts of time.
-
-不管人们对于我们腐烂的皮肉，
-那些迷途的惆怅，失败的苦痛，
-是寄予感动的热泪，深切的同情，
-还是给以轻蔑的微笑，辛辣的嘲讽。
-
-It doesn't matter whether people shed contrite tears
-For our rotten flesh, or our hesitancy, or the bitterness of our failure
-Whether they view us with sneers or deep-felt sympathy
-Or scornful smiles or pungent satire.
-
-我坚信人们对于我们的脊骨，
-那无数次地探索、迷途、失败和成功，
-一定会给予热情、客观、公正的评定，
-是的，我焦急地等待着他们的评定。
-
-I firmly believe that people will judge our spines
-And our endless explorations, losses, failures and successes
-With an enthusiastic, objective and fair evaluation
-Yes, I await their judgement anxiously.
-
-朋友，坚定地相信未来吧，
-相信不屈不挠的努力，
-相信战胜死亡的年轻，
-相信未来，热爱生命。
-
-Friends, please let us believe in the future
-Believe in our unbending striving
-Believe in our youth that can conquer death
-Believe in the Future: believe in Life.
 ```
 
 ##  你做到了！ 
